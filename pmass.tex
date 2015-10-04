@@ -1,6 +1,8 @@
 \documentclass{acm_proc_article-sp}
+\usepackage{color}
+\usepackage{comment}
 
-\newcommand{\bu}[1]{\color{#1}}
+\newcommand{\bu}[1]{{\color{red}#1}}
 
 \begin{document}
 
@@ -44,11 +46,16 @@ One of the main benefits of virtualization through cloud computing is the ready 
 
 \end{abstract}
 
-\keywords{EC2, YCSB, PMaaS} % NOT required for Proceedings
+\keywords{Performance modeling, public cloud, regression, empirical evaluation} % NOT required for Proceedings
 
 \section{Introduction}
 
-Cloud vendors offer a lot of different virtual machine instance types. Cloud tenants needs to determine what benefit new virtual machine types will bring to their applications.
+%Cloud vendors offer a lot of different virtual machine instance types. Cloud tenants needs to determine what benefit new virtual machine types will bring to their applications.
+
+~\bu{Many enterprises are choosing to migrate their information technology (IT) needs to public cloud computing platforms, a trend that is projected to continue anabated in the foreseeable future~\cite{xxx}. 
+
+}
+
 
 Solution: test your application on different VM types and find out?
 
@@ -209,14 +216,12 @@ $R_{read}^2$&$R_{write}^2$&Training Data\\ \hline
 \label{figure:redisbarread}
 \end{figure}
 
-
 \begin{figure}
 \centering
 \includegraphics[scale = 0.5]{fit_read_avg_latency_r3__r3_2x_m3_2x_m3__m3_x_r3_x.eps}
 \caption{Redis average read latency vs throughput}
 \label{figure:redisbarread}
 \end{figure}
-
 
 \begin{figure}
 \centering
@@ -225,14 +230,12 @@ $R_{read}^2$&$R_{write}^2$&Training Data\\ \hline
 \label{figure:redisbarread}
 \end{figure}
 
-
 \begin{figure}
 \centering
 \includegraphics[scale = 0.5]{fit_read_avg_latency_r3_2x_r3__m3_2x_m3__r3_x_m3_x.eps}
 \caption{Redis average read latency vs throughput}
 \label{figure:redisbarread}
 \end{figure}
-
 
 \begin{figure}
 \centering
@@ -241,14 +244,12 @@ $R_{read}^2$&$R_{write}^2$&Training Data\\ \hline
 \label{figure:redisbarread}
 \end{figure}
 
-
 \begin{figure}
 \centering
 \includegraphics[scale = 0.5]{bar_read_avg_latency_r3__r3_x_m3__m3_2x_r3_2x_m3_x.eps}
 \caption{Redis R-squared vs training set}
 \label{figure:redisbarread}
 \end{figure}
-
 
 \begin{figure}
 \centering
@@ -257,14 +258,12 @@ $R_{read}^2$&$R_{write}^2$&Training Data\\ \hline
 \label{figure:redisbarread}
 \end{figure}
 
-
 \begin{figure}
 \centering
 \includegraphics[scale = 0.5]{bar_read_avg_latency_r3_2x_r3_x_m3_2x_m3_x_r3__m3_.eps}
 \caption{Redis R-squared vs training set}
 \label{figure:redisbarread}
 \end{figure}
-
 
 \begin{figure}
 \centering
@@ -273,13 +272,12 @@ $R_{read}^2$&$R_{write}^2$&Training Data\\ \hline
 \label{figure:redisbarread}
 \end{figure}
 
-
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{redis_read_bar.eps}
-\caption{Redis R-squared vs training set}
-\label{figure:redisbarread}
-\end{figure}
+% \begin{figure}
+% \centering
+% \includegraphics[scale = 0.5]{redis_read_bar.eps}
+% \caption{Redis R-squared vs training set}
+% \label{figure:redisbarread}
+% \end{figure}
 
 \begin{figure}
 \centering
@@ -288,19 +286,19 @@ $R_{read}^2$&$R_{write}^2$&Training Data\\ \hline
 \label{figure:redisbarwrite}
 \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{redis_read_plot.eps}
-\caption{Redis average read latency vs throughput}
-\label{figure:redisread}
-\end{figure}
+% \begin{figure}
+% \centering
+% \includegraphics[scale = 0.5]{redis_read_plot.eps}
+% \caption{Redis average read latency vs throughput}
+% \label{figure:redisread}
+% \end{figure}
 
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{redis_write_plot.eps}
-\caption{Redis average write latency vs throughput}
-\label{figure:rediswrite}
-\end{figure}
+% \begin{figure}
+% \centering
+% \includegraphics[scale = 0.5]{redis_write_plot.eps}
+% \caption{Redis average write latency vs throughput}
+% \label{figure:rediswrite}
+% \end{figure}
 
 \subsection{MySQL}
 
