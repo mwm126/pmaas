@@ -2,11 +2,12 @@
 \usepackage{color}
 \usepackage{comment}
 
-\newcommand{\bu}[1]{{\color{red}#1}}
+\newcommand{\bu}[1]{#1}%{\color{blue}#1}}
+\newcommand{\mm}[1]{{\color{red}#1}}
 
 \begin{document}
 
-\title{Exploiting Resource Diversity in the Public Cloud to Offer Performance Modeling as a Service (PMaaS)}
+\title{Towards Offering Performance Modeling as a Service by Exploiting Resource Diversity in the Public Cloud}
 
 \numberofauthors{1}
 \author{
@@ -41,8 +42,13 @@ email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
 % number that will appear in the \additionalauthors section.
 
 \maketitle
+
+%\setcounter{1}
+%\pagenumbering{arabic}
+
+
 \begin{abstract}
-One of the main benefits of virtualization through cloud computing is the ready availability of large rapid virtual machines for rapid application deployment. As computing hardware advances, cloud computing vendors offer new virtual machines with new performance characteristics, adding to the large set of virtual machine types to choose from. Many virtual machine types are available, with varying performance and pricing options. In this work we present a statistical model for estimating the performance of new virtual machine types based on knowledge of existing types. This model is based on data collected by running the Yahoo! Cloud Services Benchmark (YCSB). The databases surveyed are the key-value database Redis, deployed on Amazon Elasticache, and the NoSQL databases Apache Cassandra, deployed on Amazon Elastic Compute Cloud. We tested these on a variety of Amazon virtual machines types.
+%One of the main benefits of virtualization through cloud computing is the ready availability of large rapid virtual machines for rapid application deployment. As computing hardware advances, cloud computing vendors offer new virtual machines with new performance characteristics, adding to the large set of virtual machine types to choose from. Many virtual machine types are available, with varying performance and pricing options. In this work we present a statistical model for estimating the performance of new virtual machine types based on knowledge of existing types. This model is based on data collected by running the Yahoo! Cloud Services Benchmark (YCSB). The databases surveyed are the key-value database Redis, deployed on Amazon Elasticache, and the NoSQL databases Apache Cassandra, deployed on Amazon Elastic Compute Cloud. We tested these on a variety of Amazon virtual machines types.
 
 \end{abstract}
 
@@ -52,23 +58,49 @@ One of the main benefits of virtualization through cloud computing is the ready 
 
 %Cloud vendors offer a lot of different virtual machine instance types. Cloud tenants needs to determine what benefit new virtual machine types will bring to their applications.
 
-~\bu{Many enterprises are choosing to migrate their information technology (IT) needs to public cloud computing platforms, a trend that is projected to continue anabated in the foreseeable future~\cite{xxx}. 
+~\bu{
+Many enterprises are migrating their information technology (IT) needs to public cloud computing platforms, a trend that is projected to continue unabated in the foreseeable future~\cite{xxx}. Among the most important reasons behind these ``tenants'' choosing to procure their IT needs from a public cloud is the promise of lower costs. To effectively realize these cost-related benefits, however, it is crucial that these tenants carry out careful dynamic procurement of IT resources to match their evolving needs. Numerous studies show that approaches based on over-provisioning or other ``crude'' estimates of resource needs may negate the cost benefit potential that migrating to a public cloud may offer~\cite{xxx}. Therefore, tenant-side resource procurement has emerged as an area of active research different aspects of which are receiving attention both in academic papers~\cite{xxx} and industrial products~\cite{xxx}. 
+
+Procuring resources cost-effectively from a public cloud provider poses significant technical challenges. One such challenge concerns the problem of determining the set of IT resources (including their capacities) - e.g., virtual machines, the virtual network connecting them, and storage - that would be able to cost-effectively meet the predicted workload of the tenant's software application while offering satisfactory performance and availability to its users. In order to solve this problem, a tenant must first solve the problem of assessing the performance the users of its application software are likely to experience if the application were assigned a given set of IT resources to meet its predicted workload. Our interest in this paper is in this latter problem, often labeled {\it application performance modeling}~\cite{xxx}. 
+
+%\noindent{\bf The Problem:} **state the problem.** 
+
+% explain why it is challenging to solve this problem in a public cloud ecosystem
+Whereas application performance modeling has been an area of extensive research for many decades across many communities, solving it for the public cloud ecosystem presents a tenant with non-trivial sources of complexity. In particular, most modeling solutions have been developed for traditional private settings and may not be readily adopted to a public cloud. A typical example of such a private setting is a  datacenter or a cluster privately owned and operated by an enterprise that is considering replacing it in favor of a move of its IT needs to a public cloud. 
+
+Arguably, the most important difference between  these two settings (from the point of view of application performance modeling) is the immense {\it diversity of resources} that a typical public cloud offers~\footnote{There are other important differences complementary to our focus in this paper and part of our future work. E.g., in a private setting, the user of a machine (tenant application) coincides with its owner while in a public setting the two are separated via virtualization techniques. }. To appreciate this, let us consider some examples from the most prominent public cloud providers.} ~\mm{Amazon EC2 offers ...~\cite{amazonec2} Google Compute Engine ...~\cite{googlecomputeengine} Finally, Windows Azure ...~\cite{windowsazure} Table~\ref{tbl:diversity} presents ...} ~\bu{A typical privately owned data center, on the other hand, is likely to possess a much smaller number of machine types. Keeping machines (and their software configurations) relatively homogeneous brings about significant benefits related to ease of system administration as well as cost savings (e.g., due to bulk purchase offers from IT vendors). Although factors such as xxx do result in some differences among machine types even in a private data center, the net degree of heterogeneity is significantly smaller than that seen in the public cloud ecosystem. 
+
+This high diversity of resource types in a public cloud introduces an additional source of complexity into a tenant's decision-making. Since the number of resource types in traditional IT environments are small and relatively fixed, performance models have conventionally been developed and calibrated using performance measurements (``profiling'') on the same/similar type of machines on which the application would eventually execute. On the other hand, a tenant of a public cloud would be interested in being able to predict the performance that its workload might experience on a wide variety of resource types that the provider offers. This is because which resource types are the most cost-effective for a tenant's workload might change over time due to: (i) changes in the tenant's own workload (e.g., many applications show periodic time-of-day or day-of-week patterns in their workload intensities~\cite{xxx} and (ii) dynamism and variety in the cloud provider's pricing schemes (e.g., Amazon EC2 offers spot pricing for most of its instance types that are usually much cheaper than their on-demand counterparts). Clearly, approaches based on calibrating a tenant's performance models separately on the dozens of resource types that public clouds offer are likely to not be scalable. Additionally, such approaches may prove to be expensive. 
+
+% introduce the idea of exploiting diversity instead of letting it be a hindrance. 
+Whereas conventional wisdom would consider diversity to be a hurdle for effective performance modeling (and hence for devising cost-effective tenant-side resource procurement solutions), we wish to explore if diversity actually offers some modeling-related benefits. 
+
+\noindent{\bf The Hypothesis:} **state the hypothesis.** 
+
+\noindent {\bf Our Approach and Contributions:} In this paper, we take a small first step towards exploring the above idea. Specifically, ... 
+
+The rest of this paper is organized as follows. In Section~\ref{sec:back}, we ... In Section~\ref{sec:model}, we ... In Section~\ref{sec:eval}, we ... In Section~\ref{sec:related}, we ... Finally, we discuss unresolved challenges and future directions in Section~\ref{sec:future} and conclude in Section~\ref{sec:conclus}. 
 
 }
 
 
-Solution: test your application on different VM types and find out?
+%Solution: test your application on different VM types and find out?
 
-present the problem, its significance, and key challenges
+%present the problem, its significance, and key challenges
  
-explain why the state-of-the-art may not be adequate, particularly as clouds move towards higher levels of utilization and dynamism
+%explain why the state-of-the-art may not be adequate, particularly as clouds move towards higher levels of utilization and dynamism
 
-explain our key ideas and contributions
+%explain our key ideas and contributions
 
 \section{Background}
+\label{sec:back}
+
 big picture overview of tenant-side decision-making, where PMaaS fits within this, mention the specific assumptions we make, the chosen environment, which ideas are likely to generalize to other settings
  
 what about the costs of PMaaS itself? how to make it practical? might providers actually offer it as a service?
+
+\section{Our Performance Models}
+\label{sec:model}
 
 \subsection{Methodology}
 
@@ -136,7 +168,8 @@ R_{predicted}^2 = (1 - PredictedResidual/TSS)
 }\end{displaymath}
 \end{definition}
 
- \section{Case Studies}
+\section{Evaluation with our Case Studies}
+\label{sec:eval}
 
 \subsection{Apache Cassandra}
 
@@ -202,7 +235,25 @@ $R_{read}^2$&$R_{write}^2$&Training Data\\ \hline
 \label{table:redis}
 \end{table}
 
-\newcommand{barfigure}[2] {
+\newcommand{\derp}[2] {
+\begin{figure}
+\centering
+\includegraphics[scale = 0.5]{fit_read_avg_latency_r3__r3_x_m3__m3_2x_r3_2x_m3_x.eps}
+\caption{Redis average read latency vs throughput}
+\label{figure:redisbarread}
+\end{figure}
+}
+
+\newcommand{\barfigure}[2] {
+\begin{figure}
+% \centering
+% \includegraphics[scale = 0.5]{#1}
+% \caption{#2}
+% \label{figure:redisbarread}
+\end{figure}
+}
+
+\newcommand{\fitfigure}[2] {
 \begin{figure}
 \centering
 \includegraphics[scale = 0.5]{#1}
@@ -211,25 +262,16 @@ $R_{read}^2$&$R_{write}^2$&Training Data\\ \hline
 \end{figure}
 }
 
-\newcommand{fitfigure}[2] {
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{#1}
-\caption{#2}
-\label{figure:redisbarread}
-\end{figure}
-}
-
-\barfigure{bar_read_avg_latency_r3_2x_r3__m3_2x_m3__r3_x_m3_x.eps}{Redis R-squared vs training set}
-\barfigure{bar_read_avg_latency_r3_2x_r3_x_m3_2x_m3_x_r3__m3_.eps}{Redis R-squared vs training set}
-\barfigure{bar_read_avg_latency_r3__r3_2x_m3_2x_m3__m3_x_r3_x.eps}{Redis R-squared vs training set}
-\barfigure{bar_read_avg_latency_r3__r3_x_m3__m3_2x_r3_2x_m3_x.eps}{Redis R-squared vs training set}
-\barfigure{bar_read_avg_latency_r3_x_r3_2x_m3_x_r3__m3_2x_m3_.eps}{Redis R-squared vs training set}
-\fitfigure{fit_read_avg_latency_r3_2x_r3__m3_2x_m3__r3_x_m3_x.eps}{Redis average read latency vs throughput}
-\fitfigure{fit_read_avg_latency_r3_2x_r3_x_m3_2x_m3_x_r3__m3_.eps}{Redis average read latency vs throughput}
-\fitfigure{fit_read_avg_latency_r3__r3_2x_m3_2x_m3__m3_x_r3_x.eps}{Redis average read latency vs throughput}
-\fitfigure{fit_read_avg_latency_r3__r3_x_m3__m3_2x_r3_2x_m3_x.eps}{Redis average read latency vs throughput}
-\fitfigure{fit_read_avg_latency_r3_x_r3_2x_m3_x_r3__m3_2x_m3_.eps}{Redis average read latency vs throughput}
+% \barfigure{bar_read_avg_latency_r3_2x_r3__m3_2x_m3__r3_x_m3_x.eps}{Redis R-squared vs training set}
+% \barfigure{bar_read_avg_latency_r3_2x_r3_x_m3_2x_m3_x_r3__m3_.eps}{Redis R-squared vs training set}
+% \barfigure{bar_read_avg_latency_r3__r3_2x_m3_2x_m3__m3_x_r3_x.eps}{Redis R-squared vs training set}
+% \barfigure{bar_read_avg_latency_r3__r3_x_m3__m3_2x_r3_2x_m3_x.eps}{Redis R-squared vs training set}
+% \barfigure{bar_read_avg_latency_r3_x_r3_2x_m3_x_r3__m3_2x_m3_.eps}{Redis R-squared vs training set}
+% \fitfigure{fit_read_avg_latency_r3_2x_r3__m3_2x_m3__r3_x_m3_x.eps}{Redis average read latency vs throughput}
+% \fitfigure{fit_read_avg_latency_r3_2x_r3_x_m3_2x_m3_x_r3__m3_.eps}{Redis average read latency vs throughput}
+% \fitfigure{fit_read_avg_latency_r3__r3_2x_m3_2x_m3__m3_x_r3_x.eps}{Redis average read latency vs throughput}
+% \fitfigure{fit_read_avg_latency_r3__r3_x_m3__m3_2x_r3_2x_m3_x.eps}{Redis average read latency vs throughput}
+% \fitfigure{fit_read_avg_latency_r3_x_r3_2x_m3_x_r3__m3_2x_m3_.eps}{Redis average read latency vs throughput}
 
 \begin{figure}
 \centering
@@ -354,6 +396,7 @@ $R_{read}^2$&$R_{write}^2$&Training Data\\ \hline
 \end{table}
 
 \section{Related Work}
+\label{sec:related}
 
 \begin{itemize}
    \item Chris Stewart - non-stationarity of workloads
@@ -364,8 +407,12 @@ $R_{read}^2$&$R_{write}^2$&Training Data\\ \hline
 
 
 \section{Lessons, Challenges, and Future Directions}
+\label{sec:future}
+
+what about the costs of PMaaS itself? how to make it practical? might providers actually offer it as a service?
 
 \section{Conclusions}
+\label{sec:conclus}
 
 %\end{document}  % This is where a 'short' article might terminate
 
