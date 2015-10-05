@@ -235,141 +235,45 @@ $R_{read}^2$&$R_{write}^2$&Training Data\\ \hline
 \label{table:redis}
 \end{table}
 
-\newcommand{\derp}[2] {
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{fit_read_avg_latency_r3__r3_x_m3__m3_2x_r3_2x_m3_x.eps}
-\caption{Redis average read latency vs throughput}
-\label{figure:redisbarread}
-\end{figure}
-}
-
 \newcommand{\barfigure}[2] {
-\begin{figure}
-% \centering
-% \includegraphics[scale = 0.5]{#1}
-% \caption{#2}
-% \label{figure:redisbarread}
-\end{figure}
+  \begin{figure}
+    \centering
+    \includegraphics[scale = 0.5]{#1}
+    \caption{#2}
+    \label{figure:redisbarread}
+  \end{figure}
 }
 
 \newcommand{\fitfigure}[2] {
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{#1}
-\caption{#2}
-\label{figure:redisbarread}
-\end{figure}
+  \begin{figure}
+    \centering
+    \includegraphics[scale = 0.5]{#1}
+    \caption{#2}
+    \label{figure:redisbarread}
+  \end{figure}
 }
 
-% \barfigure{bar_read_avg_latency_r3_2x_r3__m3_2x_m3__r3_x_m3_x.eps}{Redis R-squared vs training set}
-% \barfigure{bar_read_avg_latency_r3_2x_r3_x_m3_2x_m3_x_r3__m3_.eps}{Redis R-squared vs training set}
-% \barfigure{bar_read_avg_latency_r3__r3_2x_m3_2x_m3__m3_x_r3_x.eps}{Redis R-squared vs training set}
-% \barfigure{bar_read_avg_latency_r3__r3_x_m3__m3_2x_r3_2x_m3_x.eps}{Redis R-squared vs training set}
-% \barfigure{bar_read_avg_latency_r3_x_r3_2x_m3_x_r3__m3_2x_m3_.eps}{Redis R-squared vs training set}
-% \fitfigure{fit_read_avg_latency_r3_2x_r3__m3_2x_m3__r3_x_m3_x.eps}{Redis average read latency vs throughput}
-% \fitfigure{fit_read_avg_latency_r3_2x_r3_x_m3_2x_m3_x_r3__m3_.eps}{Redis average read latency vs throughput}
-% \fitfigure{fit_read_avg_latency_r3__r3_2x_m3_2x_m3__m3_x_r3_x.eps}{Redis average read latency vs throughput}
-% \fitfigure{fit_read_avg_latency_r3__r3_x_m3__m3_2x_r3_2x_m3_x.eps}{Redis average read latency vs throughput}
-% \fitfigure{fit_read_avg_latency_r3_x_r3_2x_m3_x_r3__m3_2x_m3_.eps}{Redis average read latency vs throughput}
+\barfigure{bar_read_avg_latency_r3_2x_r3__m3_2x_m3__r3_x_m3_x.eps}{Redis R-squared vs training set}
+\barfigure{bar_read_avg_latency_r3_2x_r3_x_m3_2x_m3_x_r3__m3_.eps}{Redis R-squared vs training set}
+\barfigure{bar_read_avg_latency_r3__r3_2x_m3_2x_m3__m3_x_r3_x.eps}{Redis R-squared vs training set}
+\barfigure{bar_read_avg_latency_r3__r3_x_m3__m3_2x_r3_2x_m3_x.eps}{Redis R-squared vs training set}
+\barfigure{bar_read_avg_latency_r3_x_r3_2x_m3_x_r3__m3_2x_m3_.eps}{Redis R-squared vs training set}
+\fitfigure{fit_read_avg_latency_r3_2x_r3__m3_2x_m3__r3_x_m3_x.eps}{Redis average read latency vs throughput}
+\fitfigure{fit_read_avg_latency_r3_2x_r3_x_m3_2x_m3_x_r3__m3_.eps}{Redis average read latency vs throughput}
+\fitfigure{fit_read_avg_latency_r3__r3_2x_m3_2x_m3__m3_x_r3_x.eps}{Redis average read latency vs throughput}
+\fitfigure{fit_read_avg_latency_r3__r3_x_m3__m3_2x_r3_2x_m3_x.eps}{Redis average read latency vs throughput}
+\fitfigure{fit_read_avg_latency_r3_x_r3_2x_m3_x_r3__m3_2x_m3_.eps}{Redis average read latency vs throughput}
 
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{fit_read_avg_latency_r3_x_r3_2x_m3_x_r3__m3_2x_m3_.eps}
-\caption{Redis average read latency vs throughput}
-\label{figure:redisbarread}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{fit_read_avg_latency_r3__r3_x_m3__m3_2x_r3_2x_m3_x.eps}
-\caption{Redis average read latency vs throughput}
-\label{figure:redisbarread}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{fit_read_avg_latency_r3__r3_2x_m3_2x_m3__m3_x_r3_x.eps}
-\caption{Redis average read latency vs throughput}
-\label{figure:redisbarread}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{fit_read_avg_latency_r3_2x_r3_x_m3_2x_m3_x_r3__m3_.eps}
-\caption{Redis average read latency vs throughput}
-\label{figure:redisbarread}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{fit_read_avg_latency_r3_2x_r3__m3_2x_m3__r3_x_m3_x.eps}
-\caption{Redis average read latency vs throughput}
-\label{figure:redisbarread}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{bar_read_avg_latency_r3_x_r3_2x_m3_x_r3__m3_2x_m3_.eps}
-\caption{Redis R-squared vs training set}
-\label{figure:redisbarread}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{bar_read_avg_latency_r3__r3_x_m3__m3_2x_r3_2x_m3_x.eps}
-\caption{Redis R-squared vs training set}
-\label{figure:redisbarread}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{bar_read_avg_latency_r3__r3_2x_m3_2x_m3__m3_x_r3_x.eps}
-\caption{Redis R-squared vs training set}
-\label{figure:redisbarread}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{bar_read_avg_latency_r3_2x_r3_x_m3_2x_m3_x_r3__m3_.eps}
-\caption{Redis R-squared vs training set}
-\label{figure:redisbarread}
-\end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{bar_read_avg_latency_r3_2x_r3__m3_2x_m3__r3_x_m3_x.eps}
-\caption{Redis R-squared vs training set}
-\label{figure:redisbarread}
-\end{figure}
-
-% \begin{figure}
-% \centering
-% \includegraphics[scale = 0.5]{redis_read_bar.eps}
-% \caption{Redis R-squared vs training set}
-% \label{figure:redisbarread}
-% \end{figure}
-
-\begin{figure}
-\centering
-\includegraphics[scale = 0.5]{redis_write_bar.eps}
-\caption{Redis R-squared vs training set}
-\label{figure:redisbarwrite}
-\end{figure}
-
-% \begin{figure}
-% \centering
-% \includegraphics[scale = 0.5]{redis_read_plot.eps}
-% \caption{Redis average read latency vs throughput}
-% \label{figure:redisread}
-% \end{figure}
-
-% \begin{figure}
-% \centering
-% \includegraphics[scale = 0.5]{redis_write_plot.eps}
-% \caption{Redis average write latency vs throughput}
-% \label{figure:rediswrite}
-% \end{figure}
+\barfigure{bar_write_avg_latency_r3_2x_r3__m3_2x_m3__r3_x_m3_x.eps}{Redis R-squared vs training set}
+\barfigure{bar_write_avg_latency_r3_2x_r3_x_m3_2x_m3_x_r3__m3_.eps}{Redis R-squared vs training set}
+\barfigure{bar_write_avg_latency_r3__r3_2x_m3_2x_m3__m3_x_r3_x.eps}{Redis R-squared vs training set}
+%\barfigure{bar_write_avg_latency_r3__r3_x_m3__m3_2x_r3_2x_m3_x.eps}{Redis R-squared vs training set}
+\barfigure{bar_write_avg_latency_r3_x_r3_2x_m3_x_r3__m3_2x_m3_.eps}{Redis R-squared vs training set}
+\fitfigure{fit_write_avg_latency_r3_2x_r3__m3_2x_m3__r3_x_m3_x.eps}{Redis average write latency vs throughput}
+\fitfigure{fit_write_avg_latency_r3_2x_r3_x_m3_2x_m3_x_r3__m3_.eps}{Redis average write latency vs throughput}
+\fitfigure{fit_write_avg_latency_r3__r3_2x_m3_2x_m3__m3_x_r3_x.eps}{Redis average write latency vs throughput}
+%\fitfigure{fit_write_avg_latency_r3__r3_x_m3__m3_2x_r3_2x_m3_x.eps}{Redis average write latency vs throughput}
+%\fitfigure{fit_write_avg_latency_r3_x_r3_2x_m3_x_r3__m3_2x_m3_.eps}{Redis average write latency vs throughput}
 
 \subsection{MySQL}
 
