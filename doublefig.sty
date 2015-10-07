@@ -1,0 +1,86 @@
+\newcommand{\dubfigsingle}[4]{
+%\begin{figure}
+\centerline{
+    \begin{minipage}{0.30\textwidth}
+      \begin{center}
+        \leavevmode
+        \setlength{\epsfxsize}{0.75\textwidth}
+        \setlength{\epsfysize}{0.75\textwidth}
+%        \epsffile{\Figdir#1}
+        \epsffile{#1}
+       \newline{\small (a) #2}
+      \end{center}
+    \end{minipage}
+        \hspace*{-1cm}
+    \begin{minipage}{0.30\textwidth}
+      \begin{center}
+        \leavevmode
+        \setlength{\epsfxsize}{0.75\textwidth}
+        \setlength{\epsfysize}{0.75\textwidth}
+%        \epsffile{\Figdir#3}
+        \epsffile{#3}
+       \newline{\small (b) #4}
+      \end{center}
+    \end{minipage}
+}
+%\caption{#5}\label{#6}
+%\hrule
+%\vspace*{-0.2in}
+%\end{figure}
+}
+
+
+
+\newcommand{\twobytwofig}[8]{
+%\begin{figure}
+\centerline{
+    \begin{minipage}{0.30\textwidth}
+      \begin{center}
+        \leavevmode
+        \setlength{\epsfxsize}{0.75\textwidth}
+        \setlength{\epsfysize}{0.75\textwidth}
+%        \epsffile{\Figdir#1}
+        \epsffile{#1}
+       \newline{\small (a) #2}
+      \end{center}
+    \end{minipage}
+        \hspace*{-1cm}
+    \begin{minipage}{0.30\textwidth}
+      \begin{center}
+        \leavevmode
+        \setlength{\epsfxsize}{0.75\textwidth}
+        \setlength{\epsfysize}{0.75\textwidth}
+%        \epsffile{\Figdir#3}
+        \epsffile{#3}
+       \newline{\small (b) #4}
+      \end{center}
+    \end{minipage}
+}
+\centerline{
+    \begin{minipage}{0.30\textwidth}
+      \begin{center}
+        \leavevmode
+        \setlength{\epsfxsize}{0.75\textwidth}
+        \setlength{\epsfysize}{0.75\textwidth}
+%        \epsffile{\Figdir#1}
+        \epsffile{#5}
+       \newline{\small (c) #6}
+      \end{center}
+    \end{minipage}
+        \hspace*{-1cm}
+    \begin{minipage}{0.30\textwidth}
+      \begin{center}
+        \leavevmode
+        \setlength{\epsfxsize}{0.75\textwidth}
+        \setlength{\epsfysize}{0.75\textwidth}
+%        \epsffile{\Figdir#3}
+        \epsffile{#7}
+       \newline{\small (d) #8}
+      \end{center}
+    \end{minipage}
+}
+%\caption{#9}\label{#10}
+%\hrule
+%\vspace*{-0.2in}
+%\end{figure}
+}

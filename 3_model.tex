@@ -1,0 +1,62 @@
+\section{Our Modeling Methodology}
+\label{sec:model}
+\vspace{10pt}
+In this section, we describe the general regression-based performance modeling ideas we employ in our research. In Section~\ref{sec:eval}, we describe how we adapt this basic model to our 3 application case studies whose performance we study on the Amazon EC2 cloud.
+
+For server applications, the performance can be characterized by throughput (request per second) and latency (duration of each request).  For low rates of throughput, the latency is nearly constant and increases slowly with increasing throughput.  As throughput approaches the maximum capacity of the server, the latency increases much more rapidly.  For our study, we study the low-throughput region, which is approximately linear for a variety of VM instances, applications, and throughputs.  Therefore a multiple linear regression is justified.
+
+
+
+~\bu{suggestions for creating a first draft:
+\begin{itemize}
+\item Section 3.1: Background on Multi-Linear Regression. Describe basics from a standard source and cite it. Summarize the main assumptions underlying regression. Cite papers that have used linear regression based modeling for data center/cloud workloads. 
+\item Section 3.2: Our Model. Describe what we wish to predict. Describe what all our input variables could be. Describe what subset we choose. Make a note about possible positive correlation between num cores and memory (refer to Figure 2). Describe what metric (predicted R-2) we use for measuring the efficacy of our model. 
+\item Section 3.3: Discuss implications of lack of independence between num cores and memory. Discuss what operating regions our model is likely to capture well and which ones it might not. Discuss possible extensions. Point to related work for discussion of alternate modeling approaches that have been explored. Discuss possible problems with using predicted R-2 as a measure of model accuracy and alternative metrics (e.g., in Chris Stewart's paper). 
+\end{itemize}}
+
+
+\mm{
+\subsection{Multiple Linear Regression}
+Given a data set $\{y_i,x_{i1},\ldots,x_{ip}\}^n_{i=1}$, a linear regression on multiple independent variables $x_{p}$ and dependent variable $y$ is a set of parameters $\beta_i$ that model a linear relationship between $y$ and $x_{i}$.
+
+\begin{displaymath}{
+y_i = \beta_1 x_{i1}+\ldots+\beta_{p}x_{ip}+\epsilon_i
+}\end{displaymath}
+
+The parameters $\epsilon_i$ are the error terms, an unobserved random variable.  The parameters $\beta_i$ are chosen to minimize the values of $\epsilon_i$ for the entire data set.  Specifically, the $\beta_i$ are chosen to minimize the sum of squares $\sum_{i=1}^{n} \epsilon^2_i$.
+
+\subsection{Model}
+Our goal is to model the performance of different virtual machine instance types, and show a correlation between the performance of those applications that can be used to predict the performance of those applications on new virtual machine instance types.
+
+The performance of a server application is evaluated as the time latency $y_{L}$ for responding to a request.  The latency $y_{L}$ is the dependent variable in our model.  The benchmarks are run at multiple levels of throughput (requests/second), which is taken as an independent variable $x_{T}$
+
+Virtual machine instances vary by in many ways:  the type of CPU, CPU clock speed, number of CPUs, amount of memory, type or storage (SSD vs magnetic), amount of storage, and available network bandwidth.  Each of these parameters can be modeled by as an independent variable $x_p$.
+
+We define a training set $S = \{VM_i\}^n_{i=1}$ as a set of virtual machines, each characterized by $x_p$.  We run the benchmark for each $VM_i$ for various $x_{T}$ and measure the latency $x_{L}$.  We then find a multiple linear regression $M_S$ on $\{y_{iL},x_{iT},\ldots,x_{ip}\}^n_{i=1}$.  (For a given instance $VM_i$, the values of $x_{ip}$ are fixed for all measurements for that instance.) 
+
+We then consider another instance $VM_{test}\notin S$ and use $M_S$ to predict the dependent variable $y_L$.
+
+The goodness of fit of the model for each training set is defined as $R^2_{predicted}$:
+\newdef{definition}{Definition}
+\begin{definition}
+For a test instance $VM_{test}$ with $x_{test,i}$,
+\begin{displaymath}
+R_{predicted}^2=1-\frac{\sum_{i=1}^{n} (y_{test,i} - \hat{y}(x_{test,i}))^{2}}{\sum_{i=1}^{n} (y_{test,i} - \bar{y_{test}})^{2}}
+\end{displaymath}
+where
+\begin{displaymath}
+\hat{y}(x_{test,i})=\sum_{i=1}^{n} \beta_i x_{test,i}
+\end{displaymath}
+and $\bar{y}_{test}$ is the mean of $y_{test,i}$.
+\end{definition}
+
+\subsubsection{Input and Predicted Variables}
+
+For larger training sets $S$, the model is expected to fit better to $VM_{test}$, corresponding to an increasing $R^2_{predicted}$, assuming sufficient variability in the values of $x_p$ for $VM_j\in S$ to cover the values of $x_p$ for $VM_{test}$.  This means that the $x_p$ for $VM_j\in S$ need to be independent.  In Amazon EC2, the memory/core ratio is usually constant within instance type groups.  Therefore, we selected the Amazon EC2 virtual machine instances listed in Table \label{table:awstypes} for testing.  There are three instances from the M3 group (standard) and three from the R3 group (memory optimized).  The memory/CPU ratio is the same within each group, with the R3 group having twice the memory/cpu as the M3 group.  This ensures that CPUs and memory are be independent variables.  A more extensive study with more instances would allow the use of more independent variables in the model, for instance including testing of instances in the C3 group (compute optimized), which have half as much memory/CPU as M3.
+}
+  
+\subsubsection{Measure of Model Efficacy}  
+  
+\subsection{Discussion}
+\vspace{10pt}
+
