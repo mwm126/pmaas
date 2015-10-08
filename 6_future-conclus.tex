@@ -1,32 +1,36 @@
 
-\section{Lessons, Challenges, and Future Directions}
-\label{sec:future}
-\vspace{10pt}
-
-
-~\bu{Points to expand: 
-\begin{itemize}
-\item Our work provides preliminary evidence for our hypothesis. But more work would be needed to make it practically useful.
-\item The holy grail would be PMaaS whereby ... this would require cooperation between the cloud provider and the tenants in the form of ...
-\item what about the costs of PMaaS itself? 
-\end{itemize}
-}
+%\section{Lessons, Challenges, and Future Directions}
+%\label{sec:future}
+%\vspace{10pt}
+%
+%
+%~\bu{Points to expand: 
+%\begin{itemize}
+%\item Our work provides preliminary evidence for our hypothesis. But more work would be needed %to make it practically useful.
+%\item The holy grail would be PMaaS whereby ... this would require cooperation between the %cloud provider and the tenants in the form of ...
+%\item what about the costs of PMaaS itself? 
+%\end{itemize}
+%}
 
 \section{Conclusions}
 \label{sec:conclus}
 \vspace{10pt}
 
-Conventional wisdom would suggest that the significantly higher diversity of resource types in public clouds (compared to conventional privately-owned data centers and clusters) would pose cost and scalability-related difficulties for their tenant. This is because tenants might have to calibrate their application performance models separately for the large number of resource configurations that their cost optimization must consider. In conventional settings, the machines on which such calibration is done coincide with the machines on which the application eventually runs. In this paper, we hypothesized that it might be possible to actually exploit this diversity to ease the tenant's performance modeling. The key intuition underlying our hypothesis was that ...  To explore these ideas we adapted a popular performance modeling technique based on multi-linear regression. Our model expressed the average response time of a class of interactive server applications as a linear combination of the offered throughput (requests/s), the number of CPU cores and memory in the procured VM, and degree of replication employed by the application. Using 3 different real-world applications (2 noSQL key-value stores - Redis and Apache Cassandra, and the MySQL database), we showed that training our model using a more diverse set of VMs indeed helped improve its accuracy. ** Furthermore, ... Some sample results. **  Our work opens up a number of interesting research directions, including the possibility of (semi-) automating the process of calibrating performance models using diverse resource types on a public cloud leading to ``performance modeling as a service.''
+Conventional wisdom would suggest that the significantly higher diversity of resource types in public clouds (compared to conventional privately-owned data centers and clusters) would pose cost and scalability-related difficulties for their tenants' performance modeling. This is because tenants might have to calibrate their application performance models separately for the large number of resource configurations that their cost optimization must consider. In conventional settings, the machines on which such calibration is done coincide with the machines on which the application eventually runs. In this paper, we hypothesized that it might be possible to actually exploit this diversity to ease the tenant's performance modeling.  To explore these ideas we adapted a popular performance modeling technique based on multiple linear regression. Our model expressed the average response time of a class of interactive server applications as a linear combination of the offered throughput (requests/s), the number of CPU cores and memory in the procured VM, and degree of replication employed by the application. Using three different real-world applications - two NoSQL key-value stores (Redis and Apache Cassandra) and the MySQL database -  we showed that training our model using a more diverse set of VMs helped improve its accuracy. %~\bu{** Furthermore, ... Some sample results. **}
+For example, for Redis, the $R^2_{predicted}$ measure of model efficacy improved from 0.4-0.5 with 2 VM types for training and 0.7 for 3 VM types to 0.8 for 4 VM types. Qualitatively similar results were observed for Apache Cassandra (for two different consistency settings) and MySQL. 
+Although we considered a specific modeling approach, our basic observation is likely to benefit other modeling techniques developed in the literature. 
 
+Our work opens up a number of interesting research challenges, including the possibility of automating the process of calibrating performance models using diverse resource types on a public cloud allowing providers to offer ``performance modeling as a service'' to their tenants. 
+
+\begin{comment}
 ~\bu{List of pending things:
 \begin{itemize}
-\item Fix colors in Fig. 1
-\item Add (req/s) and (ms) to the x and y-axes of several graphs.
 \item Minor fixes to Fig. 2
 \item Explain the pros and cons of choosing R-2, explain implications of num cores and memory not being independent, other modeling concerns
 \item Explain the idea behind performance modeling as a service more clearly
-\item state that performance models have other important uses besides cost optimization such as anomaly detection, ...
+\item go over the list of PC members and ensure their papers are cited!
 \end{itemize}
 }
+\end{comment}
 
 

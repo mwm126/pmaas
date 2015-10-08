@@ -1,0 +1,178 @@
+\section{Evaluation}
+\label{sec:eval}
+\vspace{10pt}
+
+\begin{comment}
+~\bu{Suggestions for creating a first draft:
+\begin{itemize}
+\item In Section 4.1: When describing our experimental setup, refer to Table 1 to say we restrict our attention to these 6 VMs from AWS and only use num cores, memory, num replicas, and throughput as our independent variables. Our dependent variables are average read and write latencies.
+\item Have a generic figure showing a YCSB client and one of our case studies with 3 replicas. 
+\item For Sections 4.2-4.4, describe the graphs/tables being presented in some detail, identify any trends. Conclude each with a list of "Key insights"
+\item Most figures and tables need more clarity on what exactly was the training set, for which VM the prediction is being done, etc. All figures need larger fonts on their axes, labels, etc. 
+\item Replace R-squared with $R^2_{predicted}$. 
+\end{itemize}
+
+\end{comment}
+
+\subsection{Methodology and Setup}
+\vspace{10pt}
+
+\begin{table}
+\centering
+
+\begin{tabular}{|r|l|c|r|l|} \hline
+Instance name & Abbr.& \# cores&Memory&Network\\ \hline
+m3.large & $VM_1$ & 2 & 7.5 GB & Moderate\\ \hline
+m3.xlarge & $VM_2$ & 4 & 15 GB & Moderate\\ \hline
+m3.2xlarge & $VM_3$ & 8 & 30 GB & High\\ \hline
+r3.large & $VM_4$ & 2 & 15 GB & Moderate\\ \hline
+r3.xlarge & $VM_5$ & 4 & 30.5 GB & Moderate\\ \hline
+r3.2xlarge & $VM_6$ & 8 & 61 GB & High\\ \hline
+\hline\end{tabular}
+\caption{AWS instance types employed in our evaluation. }
+\label{table:awstypes}
+\end{table}
+
+We carry out our evaluation on the EC2 public cloud offered by Amazon Web Services (AWS)~\cite{amazon-ec2}. We adapt our generic performance model from Section~\ref{sec:model} for three different types of latency-sensitive data-serving applications: (i) Redis (an in-memory open-source NoSQL key-value store)~\cite{redis}, (ii) Apache Cassandra (a NoSQL key-value store that can be configured for different consistency levels), and the popular MySQL ACID database~\cite{mysql}. We use the open-source Yahoo! Cloud Serving Benchmark (YCSB) as our workload generator~\cite{Cooper:2010:BCS:1807128.1807152}. We run the YCSB client on a m4.2xlarge EC2 instance running Ubuntu Linux 14.04. We monitor the system load average on the client machine to verify that the client is not the bottleneck during our tests.
+
+
+  \begin{figure*}
+    \centering
+    \includegraphics[scale = 0.4]{bar_read_avg_latency.eps}
+    \includegraphics[scale = 0.4]{bar_write_avg_latency.eps}
+    \caption{\textbf{Redis read and write $R^2_{predicted}$ vs training set.  We find that $R^2_{predicted}$ improves consistency with more diverse training sets for a wide range of training set choices supporting our basic hypothesis.}}
+    \label{figure:redisbarreadwrite}
+  \end{figure*}
+
+
+
+We describe a subset of our overall results wherein for each experiment %case 
+we load the concerned database with 1,000,000 records, each containing ten fields of 100 bytes each (the default). This amounts to an overall working set of about 1GB. Each experiment consists of subjecting the database to a particular thoughput and recording the average latency (separately for reads and writes). YCSB defines several standard workloads that we experiment with. We present results for ``Workload B'' (95\% read 5\% write). The popularity of requests is chosen based on a zipfian distribution. We repeat each experiment several times to achieve significantly tight confidence intervals. 
+%Modeling and testing was done twice for each case study:  once for read latency and once for write latency.  The ratio of the number of write operations to read operations is another potential independent variable.  For our study, this was fixed as all testing was done with 95\%/5\% read/write.
+%  Three test runs were done for each throughput and instance type to check the reproducibility of results.
+Amazon EC2 is hosted in multiple geographic regions around the world, and multiple zones within each region.  We create our testing client and servers within the same region (us-west) and availability zone (2b) to minimize the effect of network latency. Finally, we pick all VMs having individual CPUs offering the same clock rate. 
+
+ %To ensure that CPU count and memory can be safely considered independent variables (an important assumption of linear regression, recall from Section~\ref{sec:model}), 
+We select the VM instances listed in Table~\label{table:awstypes}.  
+There are three instances from the M3 group (standard) and three from the R3 group (memory optimized).  The memory/CPU ratio is the same within each group, with the R3 group having twice the memory/cpu as the M3 group.  A more extensive study with more instances would allow the use of more independent variables in the model, e.g., including testing of instances in the C3 group (compute optimized), which have half as much memory/CPU as M3.
+
+With the above choices, the measurements and modeling reported here effectively only employ a subset of all the independent variables listed in Section~\ref{sec:model}: number of CPU cores and throughput. In particular, our working set of 1GB fits fully within any of the chosen VMs, effectively rendering memory capacity moot as a predictive variable. In our more general experiments, however, we explore a much larger set of workload choices. 
+
+\begin{figure*}
+\subfloat[]{\includegraphics[width=0.5\textwidth]{fit_read_avg_latency_r3_2x_r3_x_m3_2x_m3__r3__m3_x}} 
+\subfloat[]{\includegraphics[width=0.5\textwidth]{fit_read_avg_latency_r3_2x_r3_x_m3_2x_r3__m3_x_m3_}}\\
+\subfloat[]{\includegraphics[width=0.5\textwidth]{fit_read_avg_latency_r3_x_m3_2x_r3_2x_r3__m3__m3_x.eps}}
+\subfloat[]{\includegraphics[width=0.5\textwidth]{fit_read_avg_latency_r3_x_r3_2x_m3_2x_r3__m3__m3_x.eps}} 
+\caption{Prediction of Redis read latency on $VM_2$ compared for model calibration using a variety of training sets ranging in size from 1 to 5 VM types. }
+\label{figure:redisfitread}
+\end{figure*}
+
+\input{91_redis_tables.tex}
+
+
+\subsection{Case Study 1: Redis}
+\label{sec:redis}
+\vspace{10pt}
+
+Redis is an open-source, key/value NoSQL database.  Redis is in-memory and,  therefore,  very fast.  Redis also optionally supports persistence, so unlike memcached it can be used as a primary database or as a cache.
+We deploy Redis on AWS using Amazon ElastiCache, a web service that abstracts the deployment and administration of the OS and database software.  Elasticache supports up to five read replicas of the primary database. We report results with a single replica here.
+
+
+
+
+For a VM type on which we wish to predict Redis performance, we choose training sets of different sizes from among the remaining VM types. We present sample results for predicting performance on $VM_2$ using different subsets of the remaining VMs in Tables~\ref{table:redis1}-\ref{table:redis4}. We find that each time we add a new instance type to the training set, $R^2_{predicted}$ does improve for both read and write latency. Generally, we observe that a training set of only 3 VM types appears to offer high accuracy with further additions offering relatively low gains. This bodes well for cost-efficacy of our model calibration approach - instead of having to calibrate its performance model for dozens of VM types (with associated costs), a tenant may be able to achieve comparable model accuracy using a much smaller set. 
+
+
+
+We employ an alternate representation of the above findings in Figures~\ref{figure:redisbarreadwrite}, wherein we plot histograms of $R^2_{predicted}$ to highlight the improvement brought about with adding more diverse VMs. The x-axis is labeled with numbers for the VM types making up a particular training set. 
+
+Finally, Figure~\ref{figure:redisfitread} allows us to compare the linear fits offered by several training sets and offers visual evidence of improvement in model accuracy with increase in the size of the training set. Figure~\ref{figure:redisfitwrite} presents a similar comparison for predictions of write latency. 
+
+
+
+\begin{comment}
+
+\begin{figure}[htbp]
+\centering	
+\includegraphics[width=0.45\textwidth]{fit_read_avg_latency_r3_2x_r3_x_m3_2x_m3__r3__m3_x.eps}
+\caption{Redis average read latency vs throughput. ~\bu{TODO: cleanup plot formatting; make the numbers on the axes larger, label both the axes, use darker colors, move the box with names of providers to the top-left part of the graph.}}
+\label{figure:redisbarread}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering	
+\includegraphics[width=0.45\textwidth]{fit_read_avg_latency_r3_2x_r3_x_m3_2x_r3__m3_x_m3_.eps}
+\caption{Redis average read latency vs throughput. ~\bu{TODO: cleanup plot formatting; make the numbers on the axes larger, label both the axes, use darker colors, move the box with names of providers to the top-left part of the graph.}}
+\label{figure:redisbarread}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering	
+\includegraphics[width=0.45\textwidth]{fit_read_avg_latency_r3_x_m3_2x_r3_2x_r3__m3__m3_x.eps}
+\caption{Redis average read latency vs throughput. ~\bu{TODO: cleanup plot formatting; make the numbers on the axes larger, label both the axes, use darker colors, move the box with names of providers to the top-left part of the graph.}}
+\label{figure:redisbarread}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering	
+\includegraphics[width=0.45\textwidth]{fit_read_avg_latency_r3_x_r3_2x_m3_2x_r3__m3__m3_x.eps}
+\caption{Redis average read latency vs throughput. ~\bu{TODO: cleanup plot formatting; make the numbers on the axes larger, label both the axes, use darker colors, move the box with names of providers to the top-left part of the graph.}}
+\label{figure:redisbarread}
+\end{figure}
+
+%\begin{figure}[t]
+%\twobytwofig{fit_read_avg_latency_r3_2x_r3_x_m3_2x_m3__r3__m3_x.eps}{}
+%{fit_read_avg_latency_r3_2x_r3_x_m3_2x_r3__m3_x_m3_.eps}{}
+%{fit_read_avg_latency_r3_x_m3_2x_r3_2x_r3__m3__m3_x.eps}{}
+%{fit_read_avg_latency_r3_x_r3_2x_m3_2x_r3__m3__m3_x.eps}{}
+%\caption{Profiles of Various Server Applications}
+%\label{fig:redisread}
+%\end{figure}
+
+\end{comment}
+
+
+%%%%%%%%%%%%
+
+\begin{comment}
+
+\begin{figure}[htbp]
+\centering	
+\includegraphics[width=0.45\textwidth]{fit_write_avg_latency_r3_2x_m3_2x_r3_x_r3__m3__m3_x.eps}
+\caption{Redis average write latency vs throughput. ~\bu{TODO: cleanup plot formatting; make the numbers on the axes larger, label both the axes, use darker colors, move the box with names of providers to the top-left part of the graph.}}
+\label{figure:redisbarread}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering	
+\includegraphics[width=0.45\textwidth]{fit_write_avg_latency_r3_2x_r3_x_m3_2x_m3__r3__m3_x.eps}
+\caption{Redis average write latency vs throughput. ~\bu{TODO: cleanup plot formatting; make the numbers on the axes larger, label both the axes, use darker colors, move the box with names of providers to the top-left part of the graph.}}
+\label{figure:redisbarread}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering	
+\includegraphics[width=0.45\textwidth]{fit_write_avg_latency_r3_x_m3_2x_r3_2x_r3__m3__m3_x.eps}
+\caption{Redis average write latency vs throughput. ~\bu{TODO: cleanup plot formatting; make the numbers on the axes larger, label both the axes, use darker colors, move the box with names of providers to the top-left part of the graph.}}
+\label{figure:redisbarread}
+\end{figure}
+
+\begin{figure}[htbp]
+\centering	
+\includegraphics[width=0.45\textwidth]{fit_write_avg_latency_r3_x_r3_2x_m3_2x_r3__m3__m3_x.eps}
+\caption{Redis average write latency vs throughput. ~\bu{TODO: cleanup plot formatting; make the numbers on the axes larger, label both the axes, use darker colors, move the box with names of providers to the top-left part of the graph.}}
+\label{figure:redisbarread}
+\end{figure}
+\end{comment}
+
+\begin{figure*}
+\subfloat[]{\includegraphics[width=0.5\textwidth]{fit_write_avg_latency_r3_2x_m3_2x_r3_x_r3__m3__m3_x.eps}} 
+\subfloat[]{\includegraphics[width=0.5\textwidth]{fit_write_avg_latency_r3_2x_r3_x_m3_2x_m3__r3__m3_x.eps}}\\
+\subfloat[]{\includegraphics[width=0.5\textwidth]{fit_write_avg_latency_r3_x_m3_2x_r3_2x_r3__m3__m3_x.eps}}
+\subfloat[]{\includegraphics[width=0.5\textwidth]{fit_write_avg_latency_r3_x_r3_2x_m3_2x_r3__m3__m3_x.eps}} 
+\caption{Prediction of Redis write latency on $VM_2$ compared for model calibration using a variety of training sets ranging in size from 1 to 5 VM types.}
+\label{figure:redisfitwrite}
+\end{figure*}
+
+\input{4_2_cass}
+\input{4_3_mysql}

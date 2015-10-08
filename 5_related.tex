@@ -2,9 +2,16 @@
 \label{sec:related}
 \vspace{10pt}
 
+\begin{comment}
 \begin{itemize}
 \item Performance modeling of s/w applications has a long history in a variety of domains. We only discuss some recent salient and representative efforts with close connections to our work.
 \item Alternative modeling approaches: explicit modeling based on queuing theory, other Markovian models; black box modeling based on regression, time-series, prediction, learning, control theory; gray box such as Wisconsin, shivnath babu?. All of these modeling techniques are suitable candidates to benefit from our hypothesis as all of them require some form of offline/onling profiling whose quality might be improved via exploting diversity. 
 \item Highly complementary to our work is a recent paper that exploits non-stationarity of transaction types. Their work can be readily combined with ours. 
 \item Delta modeling from CMU has some similarities. 
+\item Work on exploiting heterogeneity for cost or performance efficacy, e.g., ~\cite{Zhang15}
 \end{itemize}
+\end{comment}
+
+Performance modeling of software applications has a long history in a variety of domains. Approaches range from explicit modeling leveraging knowledge the internal workings of system (e.g., based on queueing theory or more general Markovian models~\cite{DBLP:journals/internet/Menasce04,sigmetrics05,SchroederWH06,DBLP:conf/cmg/MenasceB12}), ``black box'' approaches (ranging from relatively simple regression~\cite{Stewart07} similar to this paper to more sophisticated statistical learning-based~\cite{Mesnier:2006:RFM:1138085.1138092,MiCCS10,ZhangCL14,DBLP:journals/debu/HerodotouB13}), and combinations (``gray-box'' approaches)~\cite{Arpaci-Dusseau:2001:ICG:502034.502040,Thereska:2008:IRP:1375457.1375486}. As explained earlier, we choose to work with a very simple modeling approach because our main interest was not in high accuracy modeling but on evaluating the improvements that can result from exploiting diversity. All existing work on modeling is complementary to our ideas and we hope to explore the efficacy of our hypothesis with more sophisticated modeling techniques.
+
+A sustantial body of work exists on exploiting different forms of heterogeneity (not just in cloud platforms but also in other types of systems) for cost and/or performance optimization~\cite{DBLP:conf/cloud/ReissTGKK12,Zhang15,Farley:2012:MYM:2391229.2391249,DBLP:conf/hotcloud/LeeK11}. Our goal is different from these works in that our interest is in using diversity for improving modeling accuracy. 

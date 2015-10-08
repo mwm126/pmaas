@@ -1,23 +1,31 @@
 \section{Our Modeling Methodology}
 \label{sec:model}
 \vspace{10pt}
-In this section, we describe the general regression-based performance modeling ideas we employ in our research. In Section~\ref{sec:eval}, we describe how we adapt this basic model to our 3 application case studies whose performance we study on the Amazon EC2 cloud.
 
-For server applications, the performance can be characterized by throughput (request per second) and latency (duration of each request).  For low rates of throughput, the latency is nearly constant and increases slowly with increasing throughput.  As throughput approaches the maximum capacity of the server, the latency increases much more rapidly.  For our study, we study the low-throughput region, which is approximately linear for a variety of VM instances, applications, and throughputs.  Therefore a multiple linear regression is justified.
+In this section, we describe the general performance modeling ideas we employ in our research. In Section~\ref{sec:eval}, %we describe how 
+we adapt this basic model to our three application case studies whose performance we study on the Amazon EC2 cloud. 
+
+Our interest is in interactive data-serving applications whose %server applications, the 
+performance is typically %can be 
+characterized in terms of their throughput (request/s) and average request response time or latency.  %(duration of each request).  
+ It is important to note that our primary interest in this paper is {\em not in identifying the most accurate performance model but rather in exploring if diversity in the VMs used for calibrating our chosen model helps improve its efficacy}. 
+Therefore, although numerous modeling choices exist in the literature for such applications (see Section~\ref{sec:related}), we choose a relatively simple approach based on multiple linear regression because: (i) it serves as a good starting point for evaluating our hypothesis, (ii) it is easy to cast, train, and evaluate, and (ii) works well - especially in low/moderate throughput regions which we expect to be the case for performance-sensitive, well-provisioned tenant workloads -  as demonstrated in past work~\cite{Stewart07,Kelly:2005:DPA:1251522.1251530}. 
+
+%For low rates of throughput, the latency is nearly constant and increases slowly with increasing throughput.  As throughput approaches the maximum capacity of the server, the latency increases much more rapidly.  For our study, we study the low-throughput region, which is approximately linear for a variety of VM instances, applications, and throughputs.  Therefore a multiple linear regression is justified.
 
 
-
+\begin{comment}
 ~\bu{suggestions for creating a first draft:
 \begin{itemize}
 \item Section 3.1: Background on Multi-Linear Regression. Describe basics from a standard source and cite it. Summarize the main assumptions underlying regression. Cite papers that have used linear regression based modeling for data center/cloud workloads. 
 \item Section 3.2: Our Model. Describe what we wish to predict. Describe what all our input variables could be. Describe what subset we choose. Make a note about possible positive correlation between num cores and memory (refer to Figure 2). Describe what metric (predicted R-2) we use for measuring the efficacy of our model. 
 \item Section 3.3: Discuss implications of lack of independence between num cores and memory. Discuss what operating regions our model is likely to capture well and which ones it might not. Discuss possible extensions. Point to related work for discussion of alternate modeling approaches that have been explored. Discuss possible problems with using predicted R-2 as a measure of model accuracy and alternative metrics (e.g., in Chris Stewart's paper). 
 \end{itemize}}
+\end{comment}
 
-
-\mm{
-\subsection{Multiple Linear Regression}
-Given a data set $\{y_i,x_{i1},\ldots,x_{ip}\}^n_{i=1}$, a linear regression on multiple independent variables $x_{p}$ and dependent variable $y$ is a set of parameters $\beta_i$ that model a linear relationship between $y$ and $x_{i}$.
+%\mm{
+%\subsection{Background on Multiple Linear Regression}
+\noindent{\bf Multiple Linear Regression:} Given a data set \\ $\{y_i,x_{i1},\ldots,x_{ip}\}^n_{i=1}$, a linear regression on multiple independent variables $x_{p}$ and dependent variable $y$ is a set of parameters $\beta_i$ that model a linear relationship between $y$ and $x_{i}$~\cite{CMUStatsBook}.
 
 \begin{displaymath}{
 y_i = \beta_1 x_{i1}+\ldots+\beta_{p}x_{ip}+\epsilon_i
@@ -25,18 +33,30 @@ y_i = \beta_1 x_{i1}+\ldots+\beta_{p}x_{ip}+\epsilon_i
 
 The parameters $\epsilon_i$ are the error terms, an unobserved random variable.  The parameters $\beta_i$ are chosen to minimize the values of $\epsilon_i$ for the entire data set.  Specifically, the $\beta_i$ are chosen to minimize the sum of squares $\sum_{i=1}^{n} \epsilon^2_i$.
 
-\subsection{Model}
-Our goal is to model the performance of different virtual machine instance types, and show a correlation between the performance of those applications that can be used to predict the performance of those applications on new virtual machine instance types.
+%\subsection{Model}
+%Our goal is to model the performance of different virtual machine instance types, and show a correlation between the performance of those applications that can be used to predict the performance of those applications on new virtual machine instance types.
 
-The performance of a server application is evaluated as the time latency $y_{L}$ for responding to a request.  The latency $y_{L}$ is the dependent variable in our model.  The benchmarks are run at multiple levels of throughput (requests/second), which is taken as an independent variable $x_{T}$
+%The performance of a server application is evaluated as the time latency $y_{L}$ for responding to a request.  
+We choose as our dependent variable the average latency $y_{L}$ and as our independent variables: (i) workload/application properties - throughput, degree of replication, and read/write ratio and (ii) resource capacity of the VMs being used - number of CPU cores, clock rate of each CPU, memory, network bandwidth, and type of storage (SSD vs. magnetic). 
+%is the dependent variable in our model.  The benchmarks are run at multiple levels of throughput (requests/second), which is taken as an independent variable $x_{T}$
 
-Virtual machine instances vary by in many ways:  the type of CPU, CPU clock speed, number of CPUs, amount of memory, type or storage (SSD vs magnetic), amount of storage, and available network bandwidth.  Each of these parameters can be modeled by as an independent variable $x_p$.
+%Virtual machine instances vary by in many ways:  the type of CPU, CPU clock speed, number of CPUs, amount of memory, type or storage (SSD vs magnetic), amount of storage, and available network bandwidth.  Each of these parameters can be modeled by as an independent variable $x_p$.
 
-We define a training set $S = \{VM_i\}^n_{i=1}$ as a set of virtual machines, each characterized by $x_p$.  We run the benchmark for each $VM_i$ for various $x_{T}$ and measure the latency $x_{L}$.  We then find a multiple linear regression $M_S$ on $\{y_{iL},x_{iT},\ldots,x_{ip}\}^n_{i=1}$.  (For a given instance $VM_i$, the values of $x_{ip}$ are fixed for all measurements for that instance.) 
+We define a training set $S = \{VM_i\}^n_{i=1}$ as a set of virtual machines, each characterized by $x_p$.  In each of our experiments, we run the application whose performance we wish to model on  $VM_i$ for various $x_{T}$ and measure the latency $x_{L}$.  We then find a multiple linear regression $M_S$ on $\{y_{iL},x_{iT},\ldots,x_{ip}\}^n_{i=1}$.  (For a given instance $VM_i$, the values of $x_{ip}$ are fixed for all measurements for that instance.) 
 
-We then consider another instance $VM_{test}\notin S$ and use $M_S$ to predict the dependent variable $y_L$.
+%We then consider another instance $VM_{test}\notin S$ and use $M_S$ to predict the dependent variable $y_L$.
 
-The goodness of fit of the model for each training set is defined as $R^2_{predicted}$:
+\begin{figure}
+    \centering
+    \includegraphics[scale = 0.35]{two_regions.eps}
+    \caption{Two regions of latency vs. throughput for Redis. }
+    \label{figure:combined}
+\end{figure}
+
+
+
+
+\noindent{\bf Measure of Model Efficacy:} We use the predicted coefficient of multiple determination ($R^2_{predicted}$) as our measure of model accuracy which is defined as: 
 \newdef{definition}{Definition}
 \begin{definition}
 For a test instance $VM_{test}$ with $x_{test,i}$,
@@ -50,13 +70,29 @@ where
 and $\bar{y}_{test}$ is the mean of $y_{test,i}$.
 \end{definition}
 
-\subsubsection{Input and Predicted Variables}
+%\subsubsection{Input and Predicted Variables}
 
-For larger training sets $S$, the model is expected to fit better to $VM_{test}$, corresponding to an increasing $R^2_{predicted}$, assuming sufficient variability in the values of $x_p$ for $VM_j\in S$ to cover the values of $x_p$ for $VM_{test}$.  This means that the $x_p$ for $VM_j\in S$ need to be independent.  In Amazon EC2, the memory/core ratio is usually constant within instance type groups.  Therefore, we selected the Amazon EC2 virtual machine instances listed in Table \label{table:awstypes} for testing.  There are three instances from the M3 group (standard) and three from the R3 group (memory optimized).  The memory/CPU ratio is the same within each group, with the R3 group having twice the memory/cpu as the M3 group.  This ensures that CPUs and memory are be independent variables.  A more extensive study with more instances would allow the use of more independent variables in the model, for instance including testing of instances in the C3 group (compute optimized), which have half as much memory/CPU as M3.
-}
+To see evidence supporting our hypothesis, we expect to see the following behavior: for larger training sets $S$, the model should fit better to $VM_{test}$, corresponding to an increasing $R^2_{predicted}$, assuming sufficient variability in the values of $x_p$ for $VM_j\in S$ to cover the values of $x_p$ for $VM_{test}$.  
+
+\noindent{\bf Discussion:} Our linear regression based model is known to performs poorly when queueing delays become dominant contributors to overall latency~\cite{Stewart07}. 
+For example, if we were to model the entire set of latency observations (for experiements done using Redis, more details
+in Section~\ref{sec:redis}) using our model, we would obtain a poorer predictor than the two separate linear regression
+models shown in Figure~\ref{figure:combined}, one each for the ``low/moderate'' (Region 1) and ``high'' (Region 2) throughput regions. This suggests two points: (i) using domain knowledge (e.g., the distinction between low and high throughput regions), a 
+tenant may be able to use linear regression to obtain better models, and (ii) more sophisticated models may be 
+warranted for the needs of certain tenants. Again, since our interest is in the impact of diversity on modeling accuracy,
+we focus only on modeling performance in Region 1 for the rest of this paper. 
+
+It is important to keep in mind the basic assumption of linear regression about the independent variables being independent of each other (i.e., the $x_p$ for $VM_j\in S$ need to be independent). Interestingly, among the independent
+variables in our model, the number of cores and memory capacity are prone to be problematic on this front - typically
+larger VMs come both with more CPUs and more memory. To overcome this problem, we attempt to choose VM types
+in our experiments where this correlation is weak. Furthermore, the results we present in this paper are for a subset
+of our experimental findings wherein the entire working set fits in VM memory, rendering memory moot as a predictor of
+performance (we do incorporate memory in our more general experiments). Finally, the potential shortcomings of predicted 
+$R^2$ as a measure of model accuracy should be kept in mind when interpreting our results~\cite{CMUStatsBook}. 
+%}
   
-\subsubsection{Measure of Model Efficacy}  
+%\subsubsection{Measure of Model Efficacy}  
   
-\subsection{Discussion}
-\vspace{10pt}
+%\subsection{Discussion}
+%\vspace{10pt}
 

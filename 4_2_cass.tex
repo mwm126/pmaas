@@ -1,0 +1,119 @@
+\subsection{Case Study 2: Apache Cassandra}
+\vspace{10pt}
+
+Apache Cassandra is a Table/Key-Value hybrid NoSQL database.  It is suitable for applications that require high availability provided by replication.  In terms of the CAP theorem, Cassandra prioritizes availability and performance over consistency, making it highly performant and scalable, though consistency is eventual rather than strong, for typical Cassandra applications. % We install Apache Cassandra was on Amazon EC2 instances of various VM instance types. 
+We do our testing on Cassandra clusters with 5 nodes.  
+We run our testing with a replication factor of three, so every database record is stored on three of the five nodes.  We report results when using weak (or eventual) consistency, using a consistency level of ``ONE.'' We find qualitatively similar results when repeating these experiments with Cassandra's strict consistency settings that we omit due to space constraints. 
+
+For a sample VM type that we want to predict the performance of Cassandra, we select training sets of increasing size from the remaining VM types.  We select $VM_4$ for prediction, and do multiple linear regressions on the training set for sizes 1 through 5 for read latency and write latency data.  We observe that every time another VM type is added to the training set, the associated $R^2_{predicted}$ improves for $VM_4$ for both read and write latency (see representative results in Table \ref{table:cassandra1} and Table \ref{table:cassandra2}).
+
+These findings are also presented in an alternative way in Figure \ref{figure:cassandrabarread}, %and Figure \ref{figure:cassandrabarwrite}, 
+where we plot histograms of $R^2_{predicted}$ to emphasize the improved fit associated with larger training sets of VM types.  The x-axis is labeled with sets of numbers of those VM types in each training set.
+
+Finally, Figure \ref{figure:cassandrafitread} shows multiple linear fits offered by several training sets and shows the progressive improvement of the  model for for read latency for Cassandra as the training set grows. Figure \ref{figure:cassandrafitwrite} shows the same for write latency. We conclude that our evaluation offers supporting evidence for our second case study. 
+
+
+\begin{comment}
+  \begin{figure}
+  \centering
+    \includegraphics[scale = 0.25]{cassandra_fit_read_avg_latency_m3_2x_m3__r3_2x_r3_x_m3_x_r3_.eps}
+    \caption{Cassandra average read latency vs throughput}
+    \label{figure:redisbarread}
+  \end{figure}
+
+  \begin{figure}
+  \centering
+    \includegraphics[scale = 0.25]{cassandra_fit_read_avg_latency_r3_2x_r3_x_m3_x_m3__m3_2x_r3_.eps}
+    \caption{Cassandra average read latency vs throughput}
+    \label{figure:redisbarread}
+  \end{figure}
+
+  \begin{figure}
+  \centering
+    \includegraphics[scale = 0.25]{cassandra_fit_read_avg_latency_r3__m3_x_r3_2x_m3_2x_r3_x_m3_.eps}
+    \caption{Cassandra average read latency vs throughput}
+    \label{figure:redisbarread}
+  \end{figure}
+
+  \begin{figure}
+  \centering
+    \includegraphics[scale = 0.25]{cassandra_fit_read_avg_latency_r3_x_m3__r3_2x_m3_x_m3_2x_r3_.eps}
+    \caption{Cassandra average read latency vs throughput}
+    \label{figure:redisbarread}
+  \end{figure}
+\end{comment}
+
+  \begin{figure}
+    \centering
+    \includegraphics[scale = 0.4]{cassandra_bar_read_avg_latency.eps}
+    \includegraphics[scale = 0.4]{cassandra_bar_write_avg_latency.eps}
+    \caption{Cassandra read and write $R^2_{predicted}$ vs training set. We find that $R^2_{predicted}$ improves consistency with more diverse training sets for a wide range of training set choices supporting our basic hypothesis.}
+    \label{figure:cassandrabarread}
+  \end{figure}
+
+%   \begin{figure}
+%     \centering
+    
+%     \caption{Cassandra write $R^2_{predicted}$ vs training set}
+%     \label{figure:cassandrabarwrite}
+%   \end{figure}
+
+\begin{figure*}
+\subfloat[]{\includegraphics[width=0.25\textwidth]{cassandra_fit_read_avg_latency_m3_2x_m3__r3_2x_r3_x_m3_x_r3_.eps}} 
+\subfloat[]{\includegraphics[width=0.25\textwidth]{cassandra_fit_read_avg_latency_m3_2x_r3_2x_m3__r3__m3_x_r3_x.eps}}
+\subfloat[]{\includegraphics[width=0.25\textwidth]{cassandra_fit_read_avg_latency_r3_x_m3__r3_2x_m3_2x_m3_x_r3_.eps}}
+\subfloat[]{\includegraphics[width=0.25\textwidth]{cassandra_fit_read_avg_latency_r3_x_r3_2x_m3__m3_2x_m3_x_r3_.eps}}
+\caption{Prediction of Cassandra read latency on $VM_4$ compared for model calibration using a variety of training sets ranging in size from 1 to 5 VM types.}
+\label{figure:cassandrafitread}
+\end{figure*}
+
+\begin{comment}
+  \begin{figure}
+  \centering
+    \includegraphics[scale = 0.25]{cassandra_fit_write_avg_latency_m3_2x_m3__r3_2x_m3_x_r3_x_r3_.eps}
+    \caption{Cassandra average read latency vs throughput}
+    \label{figure:redisbarread}
+  \end{figure}
+
+  \begin{figure}
+  \centering
+    \includegraphics[scale = 0.25]{cassandra_fit_write_avg_latency_m3_2x_m3_x_r3__r3_2x_r3_x_m3_.eps}
+    \caption{Cassandra average read latency vs throughput}
+    \label{figure:redisbarread}
+  \end{figure}
+
+  \begin{figure}
+  \centering
+    \includegraphics[scale = 0.25]{cassandra_fit_write_avg_latency_m3_2x_r3_x_r3_2x_m3_x_r3__m3_.eps}
+    \caption{Cassandra average write latency vs throughput}
+    \label{figure:redisbarread}
+  \end{figure}
+
+  \begin{figure}
+  \centering
+    \includegraphics[scale = 0.25]{cassandra_fit_write_avg_latency_r3_2x_r3_x_m3_2x_m3_x_r3__m3_.eps}
+    \caption{Cassandra average write latency vs throughput}
+    \label{figure:redisbarread}
+  \end{figure}
+\end{comment}
+
+
+\begin{figure*}
+\subfloat[]{\includegraphics[width=0.25\textwidth]{cassandra_fit_write_avg_latency_m3_2x_m3__r3_2x_m3_x_r3_x_r3_.eps}} 
+\subfloat[]{\includegraphics[width=0.25\textwidth]{cassandra_fit_write_avg_latency_m3_2x_r3_2x_m3_x_m3__r3_x_r3_.eps}}
+\subfloat[]{\includegraphics[width=0.25\textwidth]{cassandra_fit_write_avg_latency_m3_2x_r3__r3_2x_r3_x_m3_x_m3_.eps}}
+\subfloat[]{\includegraphics[width=0.25\textwidth]{cassandra_fit_write_avg_latency_r3_2x_r3_x_m3_2x_m3_x_r3__m3_.eps}} 
+\caption{Prediction of Cassandra write latency on $VM_4$ compared for model calibration using a variety of training sets ranging in size from 1 to 5 VM types.}
+\label{figure:cassandrafitwrite}
+\end{figure*}
+
+% \subsubsection{Evaluation for a Weak Consistency Configuration}
+
+% consistency=ONE
+
+% Workload B (95/5 r/w) with uniform distribution
+
+% Present data for
+% 3 VM types: gen,mem,cpu, throughputs 5000-20000, replication factor 3, 5 nodes
+
+\input{92_cassandra_tables}
