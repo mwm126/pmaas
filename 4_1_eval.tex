@@ -47,21 +47,21 @@ We carry out our evaluation on the EC2 public cloud offered by Amazon Web Servic
 
 
 We describe a subset of our overall results wherein for each experiment %case 
-we load the concerned database with 1,000,000 records, each containing ten fields of 100 bytes each (the default). This amounts to an overall working set of about 1GB. Each experiment consists of subjecting the database to a particular thoughput and recording the average latency (separately for reads and writes). YCSB defines several standard workloads that we experiment with. We present results for ``Workload B'' (95\% read 5\% write). The popularity of requests is chosen based on a zipfian distribution. We repeat each experiment several times to achieve significantly tight confidence intervals. 
+we load the concerned database with 1,000,000 records, each containing ten fields of 100 bytes each (the default). This amounts to an overall working set of about 1GB. Each experiment consists of subjecting the database to a particular thoughput and recording the average latency (separately for reads and writes). YCSB defines several standard workloads that we experiment with. We experiment with different workloads offered by YCSB and present a subset of our overall results - workload ``A'' for MySQL and ``B'' for Redis and Cassandra. Workload A has 50\% read and 50\% write requests and employs a uniform popularity distribution. Workload B has 95\% reads and 5\% writes, and  the popularity of requests is chosen based on a zipfian distribution. We repeat each experiment several times to achieve significantly tight confidence intervals. 
 %Modeling and testing was done twice for each case study:  once for read latency and once for write latency.  The ratio of the number of write operations to read operations is another potential independent variable.  For our study, this was fixed as all testing was done with 95\%/5\% read/write.
 %  Three test runs were done for each throughput and instance type to check the reproducibility of results.
 Amazon EC2 is hosted in multiple geographic regions around the world, and multiple zones within each region.  We create our testing client and servers within the same region (us-west) and availability zone (2b) to minimize the effect of network latency. Finally, we pick all VMs having individual CPUs offering the same clock rate. 
 
  %To ensure that CPU count and memory can be safely considered independent variables (an important assumption of linear regression, recall from Section~\ref{sec:model}), 
-We select the VM instances listed in Table~\label{table:awstypes}.  
+We select the VM instances listed in Table~\ref{table:awstypes}.  
 There are three instances from the M3 group (standard) and three from the R3 group (memory optimized).  The memory/CPU ratio is the same within each group, with the R3 group having twice the memory/cpu as the M3 group.  A more extensive study with more instances would allow the use of more independent variables in the model, e.g., including testing of instances in the C3 group (compute optimized), which have half as much memory/CPU as M3.
 
-With the above choices, the measurements and modeling reported here effectively only employ a subset of all the independent variables listed in Section~\ref{sec:model}: number of CPU cores and throughput. In particular, our working set of 1GB fits fully within any of the chosen VMs, effectively rendering memory capacity moot as a predictive variable. In our more general experiments, however, we explore a much larger set of workload choices. 
+With the above choices, the measurements and modeling reported here effectively only employ a subset of all the independent variables listed in Section~\ref{sec:model}: number of CPU cores, throughput, number of replicas, and read-write ratio. In particular, our working set of 1GB fits fully within any of the chosen VMs, effectively rendering memory capacity moot as a predictive variable. In our more general experiments, however, we explore a much larger set of workload choices. 
 
 \begin{figure*}
-\subfloat[]{\includegraphics[width=0.5\textwidth]{fit_read_avg_latency_r3_2x_r3_x_m3_2x_m3__r3__m3_x}} 
-\subfloat[]{\includegraphics[width=0.5\textwidth]{fit_read_avg_latency_r3_2x_r3_x_m3_2x_r3__m3_x_m3_}}\\
-\subfloat[]{\includegraphics[width=0.5\textwidth]{fit_read_avg_latency_r3_x_m3_2x_r3_2x_r3__m3__m3_x.eps}}
+\subfloat[]{\includegraphics[width=0.5\textwidth]{fit_read_avg_latency_r3_2x_r3_x_m3_2x_m3__r3__m3_x.eps}} 
+\subfloat[]{\includegraphics[width=0.5\textwidth]{fit_read_avg_latency_r3_2x_r3_x_m3_2x_r3__m3__m3_x.eps}}\\
+\subfloat[]{\includegraphics[width=0.5\textwidth]{fit_read_avg_latency_r3_x_m3_2x_r3__m3__r3_2x_m3_x.eps}}
 \subfloat[]{\includegraphics[width=0.5\textwidth]{fit_read_avg_latency_r3_x_r3_2x_m3_2x_r3__m3__m3_x.eps}} 
 \caption{Prediction of Redis read latency on $VM_2$ compared for model calibration using a variety of training sets ranging in size from 1 to 5 VM types. }
 \label{figure:redisfitread}

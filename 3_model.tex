@@ -9,7 +9,7 @@ Our interest is in interactive data-serving applications whose %server applicati
 performance is typically %can be 
 characterized in terms of their throughput (request/s) and average request response time or latency.  %(duration of each request).  
  It is important to note that our primary interest in this paper is {\em not in identifying the most accurate performance model but rather in exploring if diversity in the VMs used for calibrating our chosen model helps improve its efficacy}. 
-Therefore, although numerous modeling choices exist in the literature for such applications (see Section~\ref{sec:related}), we choose a relatively simple approach based on multiple linear regression because: (i) it serves as a good starting point for evaluating our hypothesis, (ii) it is easy to cast, train, and evaluate, and (ii) works well - especially in low/moderate throughput regions which we expect to be the case for performance-sensitive, well-provisioned tenant workloads -  as demonstrated in past work~\cite{Stewart07,Kelly:2005:DPA:1251522.1251530}. 
+Therefore, although numerous modeling choices exist in the literature for such applications (see Section~\ref{sec:related}), we choose a relatively simple approach based on multiple linear regression because: (i) it serves as a good starting point for evaluating our hypothesis, (ii) it is easy to cast, train, and evaluate, and (ii)it  works well - especially under low/moderate throughputs which we expect to be normal operating regions for well-provisioned, performance-sensitive tenant workloads -  as demonstrated in past work~\cite{Stewart07,Kelly:2005:DPA:1251522.1251530}. 
 
 %For low rates of throughput, the latency is nearly constant and increases slowly with increasing throughput.  As throughput approaches the maximum capacity of the server, the latency increases much more rapidly.  For our study, we study the low-throughput region, which is approximately linear for a variety of VM instances, applications, and throughputs.  Therefore a multiple linear regression is justified.
 
@@ -74,7 +74,7 @@ and $\bar{y}_{test}$ is the mean of $y_{test,i}$.
 
 To see evidence supporting our hypothesis, we expect to see the following behavior: for larger training sets $S$, the model should fit better to $VM_{test}$, corresponding to an increasing $R^2_{predicted}$, assuming sufficient variability in the values of $x_p$ for $VM_j\in S$ to cover the values of $x_p$ for $VM_{test}$.  
 
-\noindent{\bf Discussion:} Our linear regression based model is known to performs poorly when queueing delays become dominant contributors to overall latency~\cite{Stewart07}. 
+\noindent{\bf Discussion:} Our linear regression based model is known to perform poorly when queueing delays become dominant contributors to overall latency~\cite{Stewart07}. 
 For example, if we were to model the entire set of latency observations (for experiements done using Redis, more details
 in Section~\ref{sec:redis}) using our model, we would obtain a poorer predictor than the two separate linear regression
 models shown in Figure~\ref{figure:combined}, one each for the ``low/moderate'' (Region 1) and ``high'' (Region 2) throughput regions. This suggests two points: (i) using domain knowledge (e.g., the distinction between low and high throughput regions), a 
@@ -84,7 +84,7 @@ we focus only on modeling performance in Region 1 for the rest of this paper.
 
 It is important to keep in mind the basic assumption of linear regression about the independent variables being independent of each other (i.e., the $x_p$ for $VM_j\in S$ need to be independent). Interestingly, among the independent
 variables in our model, the number of cores and memory capacity are prone to be problematic on this front - typically
-larger VMs come both with more CPUs and more memory. To overcome this problem, we attempt to choose VM types
+larger VMs come both with more CPUs and more memory - see Figure~\ref{fig:diversity}. To overcome this problem, we attempt to choose VM types
 in our experiments where this correlation is weak. Furthermore, the results we present in this paper are for a subset
 of our experimental findings wherein the entire working set fits in VM memory, rendering memory moot as a predictor of
 performance (we do incorporate memory in our more general experiments). Finally, the potential shortcomings of predicted 
