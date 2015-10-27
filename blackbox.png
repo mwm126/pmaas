@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="client-nojs">
+<head>
+<meta charset="UTF-8" />
+<title>Black box - Wikipedia, the free encyclopedia</title>
+<script>document.documentElement.className = document.documentElement.className.replace( /(^|\s)client-nojs(\s|$)/, "$1client-js$2" );</script>
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgCanonicalNamespace":"","wgCanonicalSpecialPageName":false,"wgNamespaceNumber":0,"wgPageName":"Black_box","wgTitle":"Black box","wgCurRevisionId":680689283,"wgRevisionId":680689283,"wgArticleId":18950050,"wgIsArticle":true,"wgIsRedirect":false,"wgAction":"view","wgUserName":null,"wgUserGroups":["*"],"wgCategories":["Use dmy dates from November 2013","Wikipedia articles with GND identifiers","Cybernetics","Systems theory"],"wgBreakFrames":false,"wgPageContentLanguage":"en","wgPageContentModel":"wikitext","wgSeparatorTransformTable":["",""],"wgDigitTransformTable":["",""],"wgDefaultDateFormat":"dmy","wgMonthNames":["","January","February","March","April","May","June","July","August","September","October","November","December"],"wgMonthNamesShort":["","Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"],"wgRelevantPageName":"Black_box","wgRelevantArticleId":18950050,"wgIsProbablyEditable":true,"wgRestrictionEdit":[],"wgRestrictionMove":[],"wikilove-recipient":"","wikilove-anon":0,"wgWikiEditorEnabledModules":{"toolbar":true,"dialogs":true,"preview":false,"publish":false},"wgBetaFeaturesFeatures":[],"wgMediaViewerOnClick":true,"wgMediaViewerEnabledByDefault":true,"wgVisualEditor":{"pageLanguageCode":"en","pageLanguageDir":"ltr","usePageImages":true,"usePageDescriptions":true},"wgGatherShouldShowTutorial":true,"wgGatherEnableSample":0,"wgGatherPageImageThumbnail":"//upload.wikimedia.org/wikipedia/commons/thumb/7/77/OpenSystemRepresentation.svg/100px-OpenSystemRepresentation.svg.png","wgULSAcceptLanguageList":["en-us","en"],"wgULSCurrentAutonym":"English","wgFlaggedRevsParams":{"tags":{"status":{"levels":1,"quality":2,"pristine":3}}},"wgStableRevisionId":null,"wgCategoryTreePageCategoryOptions":"{\"mode\":0,\"hideprefix\":20,\"showcount\":true,\"namespaces\":false}","wgNoticeProject":"wikipedia","wgWikibaseItemId":"Q29256","wgVisualEditorToolbarScrollOffset":0}); /* @nomin */mw.loader.implement("user.options",function($,jQuery){mw.user.options.set({"variant":"en"});});mw.loader.implement("user.tokens",function ( $, jQuery ) {
+mw.user.tokens.set({"editToken":"+\\","patrolToken":"+\\","watchToken":"+\\"}); /* @nomin */ ;
+
+});mw.loader.load(["mediawiki.page.startup","mediawiki.legacy.wikibits","ext.centralauth.centralautologin","ext.gadget.WatchlistBase","ext.gadget.WatchlistGreenIndicators","mmv.head","ext.visualEditor.desktopArticleTarget.init","ext.uls.init","ext.uls.interface","ext.centralNotice.bannerController","skins.vector.js"]);
+} );</script>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=ext.gadget.WatchlistBase%2CWatchlistGreenIndicators%7Cext.uls.nojs%7Cext.visualEditor.desktopArticleTarget.noscript%7Cmediawiki.legacy.commonPrint%2Cshared%7Cmediawiki.sectionAnchor%7Cmediawiki.skinning.interface%7Cskins.vector.styles%7Cwikibase.client.init&amp;only=styles&amp;skin=vector" />
+<meta name="ResourceLoaderDynamicStyles" content="" />
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=site&amp;only=styles&amp;skin=vector" />
+<style>a:lang(ar),a:lang(kk-arab),a:lang(mzn),a:lang(ps),a:lang(ur){text-decoration:none}</style>
+<script async="" src="/w/load.php?debug=false&amp;lang=en&amp;modules=startup&amp;only=scripts&amp;skin=vector"></script>
+<meta name="generator" content="MediaWiki 1.27.0-wmf.3" />
+<link rel="alternate" href="android-app://org.wikipedia/http/en.m.wikipedia.org/wiki/Black_box" />
+<link rel="alternate" type="application/x-wiki" title="Edit this page" href="/w/index.php?title=Black_box&amp;action=edit" />
+<link rel="edit" title="Edit this page" href="/w/index.php?title=Black_box&amp;action=edit" />
+<link rel="apple-touch-icon" href="/static/apple-touch/wikipedia.png" />
+<link rel="shortcut icon" href="/static/favicon/wikipedia.ico" />
+<link rel="search" type="application/opensearchdescription+xml" href="/w/opensearch_desc.php" title="Wikipedia (en)" />
+<link rel="EditURI" type="application/rsd+xml" href="//en.wikipedia.org/w/api.php?action=rsd" />
+<link rel="copyright" href="//creativecommons.org/licenses/by-sa/3.0/" />
+<link rel="alternate" type="application/atom+xml" title="Wikipedia Atom feed" href="/w/index.php?title=Special:RecentChanges&amp;feed=atom" />
+<link rel="canonical" href="https://en.wikipedia.org/wiki/Black_box" />
+<link rel="dns-prefetch" href="//meta.wikimedia.org" />
+<!--[if lt IE 7]><style type="text/css">body{behavior:url("/w/static/1.27.0-wmf.3/skins/Vector/csshover.min.htc")}</style><![endif]-->
+</head>
+<body class="mediawiki ltr sitedir-ltr ns-0 ns-subject page-Black_box skin-vector action-view">
+		<div id="mw-page-base" class="noprint"></div>
+		<div id="mw-head-base" class="noprint"></div>
+		<div id="content" class="mw-body" role="main">
+			<a id="top"></a>
+
+							<div id="siteNotice"><!-- CentralNotice --></div>
+						<div class="mw-indicators">
+</div>
+			<h1 id="firstHeading" class="firstHeading" lang="en">Black box</h1>
+									<div id="bodyContent" class="mw-body-content">
+									<div id="siteSub">From Wikipedia, the free encyclopedia</div>
+								<div id="contentSub"></div>
+												<div id="jump-to-nav" class="mw-jump">
+					Jump to:					<a href="#mw-head">navigation</a>, 					<a href="#p-search">search</a>
+				</div>
+				<div id="mw-content-text" lang="en" dir="ltr" class="mw-content-ltr"><div class="hatnote">This article is about black box systems.  For other uses, see <a href="/wiki/Black_box_(disambiguation)" title="Black box (disambiguation)" class="mw-disambig">Black box (disambiguation)</a>.</div>
+<div class="thumb tright">
+<div class="thumbinner" style="width:402px;"><a href="/wiki/File:Blackbox3D.png" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/4/44/Blackbox3D.png/400px-Blackbox3D.png" width="400" height="109" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/4/44/Blackbox3D.png 1.5x, //upload.wikimedia.org/wikipedia/commons/4/44/Blackbox3D.png 2x" data-file-width="600" data-file-height="163" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:Blackbox3D.png" class="internal" title="Enlarge"></a></div>
+Schema of a <i>black box</i>. Only the behavior of the stimulus/response will be accounted for, to infer the (unknown) <i>box</i>.</div>
+</div>
+</div>
+<p>In science, computing, and engineering, a <b>black box</b> is a device, system or object which can be viewed in terms of its inputs and outputs (or <a href="/wiki/Transfer_function" title="Transfer function">transfer characteristics</a>), without any knowledge of its internal workings. Its implementation is "opaque" (black). Almost anything might be referred to as a black box: a <a href="/wiki/Transistor" title="Transistor">transistor</a>, <a href="/wiki/Algorithm" title="Algorithm">algorithm</a>, or the <a href="/wiki/Human_brain" title="Human brain">human brain</a>.</p>
+<p>The opposite of a black box is a system where the inner components or logic are available for inspection, which is most commonly referred to as a <a href="/wiki/White_box_(software_engineering)" title="White box (software engineering)">white box</a> (sometimes also known as a "clear box" or a "glass box").</p>
+<p></p>
+<div id="toc" class="toc">
+<div id="toctitle">
+<h2>Contents</h2>
+</div>
+<ul>
+<li class="toclevel-1 tocsection-1"><a href="#History"><span class="tocnumber">1</span> <span class="toctext">History</span></a></li>
+<li class="toclevel-1 tocsection-2"><a href="#Theory"><span class="tocnumber">2</span> <span class="toctext">Theory</span></a>
+<ul>
+<li class="toclevel-2 tocsection-3"><a href="#Recording_of_observed_states"><span class="tocnumber">2.1</span> <span class="toctext">Recording of observed states</span></a></li>
+<li class="toclevel-2 tocsection-4"><a href="#Modeling"><span class="tocnumber">2.2</span> <span class="toctext">Modeling</span></a></li>
+<li class="toclevel-2 tocsection-5"><a href="#Testing_black_box_model"><span class="tocnumber">2.3</span> <span class="toctext">Testing black box model</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1 tocsection-6"><a href="#Examples"><span class="tocnumber">3</span> <span class="toctext">Examples</span></a></li>
+<li class="toclevel-1 tocsection-7"><a href="#Other_uses_of_the_term"><span class="tocnumber">4</span> <span class="toctext">Other uses of the term</span></a></li>
+<li class="toclevel-1 tocsection-8"><a href="#See_also"><span class="tocnumber">5</span> <span class="toctext">See also</span></a></li>
+<li class="toclevel-1 tocsection-9"><a href="#References"><span class="tocnumber">6</span> <span class="toctext">References</span></a></li>
+</ul>
+</div>
+<p></p>
+<h2><span class="mw-headline" id="History">History</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Black_box&amp;action=edit&amp;section=1" title="Edit section: History">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<p>The modern term "black box" seems to have entered the English language around 1945. In electronic <a href="/wiki/Circuit_theory" title="Circuit theory" class="mw-redirect">circuit theory</a> the process of <a href="/wiki/Network_synthesis_filters" title="Network synthesis filters">network synthesis</a> from <a href="/wiki/Transfer_function" title="Transfer function">transfer functions</a>, which led to electronic circuits being regarded as "black boxes" characterized by their response to signals applied to their <a href="/wiki/Port_(circuit_theory)" title="Port (circuit theory)">ports</a>, can be traced to <a href="/wiki/Wilhelm_Cauer" title="Wilhelm Cauer">Wilhelm Cauer</a> who published his ideas in their most developed form in 1941.<sup id="cite_ref-1" class="reference"><a href="#cite_note-1"><span>[</span>1<span>]</span></a></sup> Although Cauer did not himself use the term, others who followed him certainly did describe the method as black-box analysis.<sup id="cite_ref-2" class="reference"><a href="#cite_note-2"><span>[</span>2<span>]</span></a></sup> <a href="/wiki/Vitold_Belevitch" title="Vitold Belevitch">Vitold Belevitch</a><sup id="cite_ref-3" class="reference"><a href="#cite_note-3"><span>[</span>3<span>]</span></a></sup> puts the concept of black-boxes even earlier, attributing the explicit use of <a href="/wiki/Two-port_network" title="Two-port network">two-port networks</a> as black boxes to <a href="/wiki/Franz_Breisig" title="Franz Breisig">Franz Breisig</a> in 1921 and argues that 2-terminal components were implicitly treated as black-boxes before that.</p>
+<p>In <a href="/wiki/Cybernetics" title="Cybernetics">cybernetics</a>, a full treatment was given by <a href="/wiki/Ross_Ashby" title="Ross Ashby" class="mw-redirect">Ross Ashby</a> in 1956.<sup id="cite_ref-ash56_4-0" class="reference"><a href="#cite_note-ash56-4"><span>[</span>4<span>]</span></a></sup> A black box was described by <a href="/wiki/Norbert_Wiener" title="Norbert Wiener">Norbert Wiener</a> in 1961 as an unknown system that was to be identified using the techniques of <a href="/wiki/System_identification" title="System identification">system identification</a>.<sup id="cite_ref-5" class="reference"><a href="#cite_note-5"><span>[</span>5<span>]</span></a></sup> He saw the first step in <a href="/wiki/Self_organization#Self-organization_in_cybernetics" title="Self organization" class="mw-redirect">self-organization</a> as being to be able to copy the output behavior of a black box.</p>
+<h2><span class="mw-headline" id="Theory">Theory</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Black_box&amp;action=edit&amp;section=2" title="Edit section: Theory">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="thumb tright">
+<div class="thumbinner" style="width:254px;"><a href="/wiki/File:OpenSystemRepresentation.svg" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/OpenSystemRepresentation.svg/252px-OpenSystemRepresentation.svg.png" width="252" height="200" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/7/77/OpenSystemRepresentation.svg/378px-OpenSystemRepresentation.svg.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/7/77/OpenSystemRepresentation.svg/504px-OpenSystemRepresentation.svg.png 2x" data-file-width="931" data-file-height="740" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:OpenSystemRepresentation.svg" class="internal" title="Enlarge"></a></div>
+The <i><a href="/wiki/Open_system_(systems_theory)" title="Open system (systems theory)">open system theory</a></i> is the foundation of <i>black box theory</i>. Both have focus on input and output flows, representing exchanges with the surroundings.</div>
+</div>
+</div>
+<p>The <i>black box</i> is an abstraction representing a class of concrete <a href="/wiki/Open_system_(systems_theory)" title="Open system (systems theory)">open system</a> which can be viewed solely in terms of its "stimuli inputs" and "output reactions": "The constitution and structure of the box are altogether irrelevant to the approach under consideration, which is purely external or phenomenological. In other words, only the behavior of the system will be accounted for."<sup id="cite_ref-Bunge63_6-0" class="reference"><a href="#cite_note-Bunge63-6"><span>[</span>6<span>]</span></a></sup></p>
+<p>The understanding of a <i>black box</i> is based on the "explanatory principle", the <a href="/wiki/Hypothesis" title="Hypothesis">hypothesis</a> of a <a href="/wiki/Causal_relation" title="Causal relation" class="mw-redirect">causal relation</a> between the <i>input</i> and the <i>output</i>, and:<sup id="cite_ref-gla09_7-0" class="reference"><a href="#cite_note-gla09-7"><span>[</span>7<span>]</span></a></sup></p>
+<ul>
+<li><i>input</i> and <i>output</i> being believed to be distinct,</li>
+<li>having observable (and relatable) inputs and outputs,</li>
+<li>being black to the observer (non-openable).</li>
+</ul>
+<h3><span class="mw-headline" id="Recording_of_observed_states">Recording of observed states</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Black_box&amp;action=edit&amp;section=3" title="Edit section: Recording of observed states">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<div class="thumb tright">
+<div class="thumbinner" style="width:254px;"><a href="/wiki/File:Hidrograma.png" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/1/14/Hidrograma.png/252px-Hidrograma.png" width="252" height="195" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/1/14/Hidrograma.png/378px-Hidrograma.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/1/14/Hidrograma.png/504px-Hidrograma.png 2x" data-file-width="643" data-file-height="497" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:Hidrograma.png" class="internal" title="Enlarge"></a></div>
+The observed <a href="/wiki/Hydrograph" title="Hydrograph">hydrograph</a> is a graphic of the response of a <a href="/wiki/Drainage_basin" title="Drainage basin">watershed</a> (a blackbox) with its <a href="/wiki/Surface_runoff" title="Surface runoff">runoff</a> (red) to an input of rainfall (blue).</div>
+</div>
+</div>
+<p>An observer makes observations over time. All observations of inputs and outputs of a <i>black box</i> can be written in a table with the form:</p>
+<table border="1">
+<tr>
+<th>↓Time</th>
+<th>States of input and output</th>
+</tr>
+<tr>
+<td>...</td>
+<td>... ...</td>
+</tr>
+<tr>
+<td>...</td>
+<td>... ...</td>
+</tr>
+</table>
+<p>in which, at each of a sequence of times, the states of the <i>box’s</i> various parts, input and output, are recorded. Thus, using the <a href="/wiki/William_Ross_Ashby" title="William Ross Ashby">Ashby's</a> example, the box that fell from the <a href="/wiki/Flying_saucer" title="Flying saucer">Flying saucer</a> might lead to the protocol:<sup id="cite_ref-ash56_4-1" class="reference"><a href="#cite_note-ash56-4"><span>[</span>4<span>]</span></a></sup></p>
+<table border="1">
+<tr>
+<th>↓Time</th>
+<th>States of input and output</th>
+</tr>
+<tr>
+<td>11:18 a.m.</td>
+<td>I did nothing—the Box emitted a steady hum at 240 c/s.</td>
+</tr>
+<tr>
+<td>11:19</td>
+<td>I pushed over the switch marked K: the note rose to 480 c/s and remained steady.</td>
+</tr>
+<tr>
+<td>11:20</td>
+<td>Accidentally I pushed the button marked “!”—the Box increased in temperature by 20°C.</td>
+</tr>
+<tr>
+<td>...</td>
+<td>... Etc.</td>
+</tr>
+</table>
+<div class="thumb tright">
+<div class="thumbinner" style="width:254px;"><a href="/wiki/File:Blackbox3D-obs.png" class="image"><img alt="" src="//upload.wikimedia.org/wikipedia/commons/thumb/3/35/Blackbox3D-obs.png/252px-Blackbox3D-obs.png" width="252" height="167" class="thumbimage" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/3/35/Blackbox3D-obs.png/378px-Blackbox3D-obs.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/3/35/Blackbox3D-obs.png/504px-Blackbox3D-obs.png 2x" data-file-width="600" data-file-height="398" /></a>
+<div class="thumbcaption">
+<div class="magnify"><a href="/wiki/File:Blackbox3D-obs.png" class="internal" title="Enlarge"></a></div>
+When the observer can also do some stimulus (input), the relation with the black box is not only an observation, but an <a href="/wiki/Experiment" title="Experiment">experiment</a>.</div>
+</div>
+</div>
+<p>Thus every system, fundamentally, is investigated by the collection of a long protocol, drawn out in time, showing the sequence of input and output states. From this there follows the fundamental deduction that all knowledge obtainable from a Black Box (of given input and output) is such as can be obtained by re-coding the protocol (the <i>observation table</i>); all that, and nothing more.<sup id="cite_ref-ash56_4-2" class="reference"><a href="#cite_note-ash56-4"><span>[</span>4<span>]</span></a></sup></p>
+<p>If the observer also controls input, the investigation turns into an <a href="/wiki/Experiment" title="Experiment">experiment</a> (illustration), and hypotheses about <a href="/wiki/Causality" title="Causality">cause-and-effect</a> can be tested directly.</p>
+<p>When the "experimenter" is also motivated to "control the box", there is an active feedback in the box/observer relation, promoting what in <a href="/wiki/Control_system" title="Control system">control theory</a> is a <a href="/wiki/Feed_forward_(control)" title="Feed forward (control)">feed forward</a> architecture.</p>
+<h3><span class="mw-headline" id="Modeling">Modeling</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Black_box&amp;action=edit&amp;section=4" title="Edit section: Modeling">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>The <i>modeling process</i> is the construction of a predictive <a href="/wiki/Mathematical_model" title="Mathematical model">mathematical model</a>, using existing historic data (observation table).</p>
+<h3><span class="mw-headline" id="Testing_black_box_model">Testing black box model</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Black_box&amp;action=edit&amp;section=5" title="Edit section: Testing black box model">edit</a><span class="mw-editsection-bracket">]</span></span></h3>
+<p>A developed <i>black box model</i> is a validated model when <i><a href="/wiki/Black-box_testing" title="Black-box testing">black-box testing</a></i> methods<sup id="cite_ref-BS7925_8-0" class="reference"><a href="#cite_note-BS7925-8"><span>[</span>8<span>]</span></a></sup> ensures that, based solely on <a href="/wiki/Observation#Observation_in_science" title="Observation">observable</a> elements.</p>
+<p>See also <a href="/wiki/Backtesting" title="Backtesting">Backtesting</a>: inputs for past events (not used in the "modeling effort") are entered into the model to see how well the output matches the known results.</p>
+<h2><span class="mw-headline" id="Examples">Examples</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Black_box&amp;action=edit&amp;section=6" title="Edit section: Examples">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li>In <a href="/wiki/Computer_programming" title="Computer programming">computer programming</a> and <a href="/wiki/Software_engineering" title="Software engineering">software engineering</a>, <i><a href="/wiki/Black_box_testing" title="Black box testing" class="mw-redirect">black box testing</a></i> is used to check that the output of a program is as expected, given certain inputs.<sup id="cite_ref-9" class="reference"><a href="#cite_note-9"><span>[</span>9<span>]</span></a></sup> The term "black box" is used because the actual program being executed is not examined.</li>
+</ul>
+<ul>
+<li>In <a href="/wiki/Computing" title="Computing">computing</a> in general, a <i>black box program</i> is one where the user cannot see the inner workings (perhaps because it is a <a href="/wiki/Closed_source" title="Closed source" class="mw-redirect">closed source</a> program) or one which has no side effects and the function of which need not be examined, a routine suitable for re-use.</li>
+</ul>
+<ul>
+<li>Also in <a href="/wiki/Computing" title="Computing">computing</a>, a black box refers to a piece of equipment provided by a vendor, for the purpose of using that vendor's product. It is often the case that the vendor maintains and supports this equipment, and the company receiving the black box typically is hands-off.</li>
+</ul>
+<ul>
+<li>In <a href="/wiki/Neural_network" title="Neural network" class="mw-redirect">neural networking</a> or <a href="/wiki/Heuristic_algorithm" title="Heuristic algorithm" class="mw-redirect">heuristic algorithms</a> (computer terms generally used to describe 'learning' computers or 'AI simulations'), a black box is used to describe the constantly changing section of the program environment which cannot easily be tested by the programmers. This is also called a <a href="/wiki/White_box_(software_engineering)" title="White box (software engineering)">white box</a> in the context that the program code can be seen, but the code is so complex that it is functionally equivalent to a black box.</li>
+</ul>
+<ul>
+<li>In <a href="/wiki/Physics" title="Physics">physics</a>, a black box is a system whose internal structure is unknown, or need not be considered for a particular purpose.</li>
+</ul>
+<ul>
+<li>In <a href="/wiki/Mathematical_model" title="Mathematical model">mathematical modeling</a>, a limiting case.</li>
+</ul>
+<ul>
+<li>In <a href="/wiki/Philosophy" title="Philosophy">philosophy</a> and <a href="/wiki/Psychology" title="Psychology">psychology</a>, the school of <a href="/wiki/Behaviorism" title="Behaviorism">behaviorism</a> sees the human mind as a black box; see <i><a href="/wiki/Black_box_theory" title="Black box theory">black box theory</a></i>.<sup id="cite_ref-10" class="reference"><a href="#cite_note-10"><span>[</span>10<span>]</span></a></sup></li>
+</ul>
+<ul>
+<li>In <a href="/wiki/Neorealism_in_international_relations" title="Neorealism in international relations" class="mw-redirect">neorealist</a> <a href="/wiki/International_relations_theory" title="International relations theory">international relations theory</a>, the <a href="/wiki/Sovereign_state" title="Sovereign state">sovereign state</a> is generally considered a black box: states are assumed to be unitary, <a href="/wiki/Homo_economicus" title="Homo economicus">rational, self-interested actors</a>, and the actual decision-making processes of the state are disregarded as being largely irrelevant. <a href="/wiki/Liberalism_in_international_relations" title="Liberalism in international relations" class="mw-redirect">Liberal</a> and <a href="/wiki/Constructivism_in_international_relations" title="Constructivism in international relations" class="mw-redirect">constructivist</a> theorists often criticize neorealism for the "black box" model, and refer to much of their work on how states arrive at decisions as "breaking open the black box".</li>
+</ul>
+<ul>
+<li>In <a href="/wiki/Cryptography" title="Cryptography">cryptography</a> to capture the notion of knowledge obtained by an algorithm through the execution of a <a href="/wiki/Cryptographic_protocol" title="Cryptographic protocol">cryptographic protocol</a> such as a <a href="/wiki/Zero-knowledge_proof" title="Zero-knowledge proof">zero-knowledge proof</a> protocol. If the output of the algorithm when interacting with the protocol can be simulated by a simulator that interacts only the algorithm, this means that the algorithm 'cannot know' anything more than the input of the simulator. If the simulator can only interact with the algorithm in a black box way, we speak of a black box simulator.</li>
+</ul>
+<p><i>Black Box theory</i> is, however, even wider in application than these professional studies:</p>
+<blockquote class="toccolours" style="float:none; display:table;">
+<div style="padding: 10px 15px 10px 15px;">The child who tries to open a door has to manipulate the handle (the input) so as to produce the desired movement at the latch (the output); and he has to learn how to control the one by the other without being able to see the internal mechanism that links them. In our daily lives we are confronted at every turn with systems whose internal mechanisms are not fully open to inspection, and which must be treated by the methods appropriate to the Black Box.
+<div style="text-align: right;"><cite>— W. Ross Ashby, <i>AN INTRODUCTION TO CYBERNETICS</i>, 1957</cite></div>
+</div>
+</blockquote>
+<h2><span class="mw-headline" id="Other_uses_of_the_term">Other uses of the term</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Black_box&amp;action=edit&amp;section=7" title="Edit section: Other uses of the term">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<ul>
+<li>In <a href="/wiki/Aviation" title="Aviation">aviation</a>, the <a href="/wiki/Flight_recorder" title="Flight recorder">flight recorder</a> is often called a "black box", especially by the media, although it is usually bright orange to facilitate its discovery after a crash. In an <a href="/wiki/Airplane" title="Airplane">airplane</a> or <a href="/wiki/Helicopter" title="Helicopter">helicopter</a>, the flight recorder consists of two independent devices that are usually combined in a single unit. The flight data recorder logs information about controls and sensors, and the cockpit voice recorder preserves the most recent sounds in the cockpit, including conversation of the pilots. If an accident happens, investigators can use the recordings to assist in the investigation.
+<ul>
+<li>Similarly, the <a href="/wiki/Train_event_recorder" title="Train event recorder">train event recorder</a> in <a href="/wiki/Rail_transport" title="Rail transport">rail transport</a> and the <a href="/wiki/Voyage_data_recorder" title="Voyage data recorder">voyage data recorder</a> in maritime transport are often called "black boxes".</li>
+</ul>
+</li>
+<li>In <a href="/wiki/Amateur_radio" title="Amateur radio">amateur radio</a> the term "black box operator" is a disparaging or self-deprecating description of someone who operates factory-made radios without having a good understanding of how they work. Such operators do not build their own equipment (an activity called "homebrewing") or repair their own "black boxes".<sup id="cite_ref-11" class="reference"><a href="#cite_note-11"><span>[</span>11<span>]</span></a></sup></li>
+</ul>
+<h2><span class="mw-headline" id="See_also">See also</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Black_box&amp;action=edit&amp;section=8" title="Edit section: See also">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="div-col columns column-count column-count-2" style="-moz-column-count: 2; -webkit-column-count: 2; column-count: 2;">
+<ul>
+<li><a href="/wiki/Black_box_group" title="Black box group">Black box group</a></li>
+<li><a href="/wiki/Black_box_theory" title="Black box theory">Black box theory</a></li>
+<li><a href="/wiki/Blackboxing" title="Blackboxing">Blackboxing</a></li>
+<li><a href="/wiki/Flight_recorder" title="Flight recorder">Flight recorder</a></li>
+<li><a href="/wiki/Hysteresis" title="Hysteresis">Hysteresis</a></li>
+<li><a href="/wiki/Open_system_(disambiguation)" title="Open system (disambiguation)" class="mw-redirect">Open system (disambiguation)</a></li>
+<li><a href="/wiki/Oracle_machine" title="Oracle machine">Oracle machine</a></li>
+<li><a href="/wiki/Pattern_recognition" title="Pattern recognition">Pattern recognition</a></li>
+<li><a href="/wiki/Prediction" title="Prediction">Prediction</a> / <a href="/wiki/Retrodiction" title="Retrodiction">Retrodiction</a></li>
+<li><a href="/wiki/System_identification" title="System identification">System identification</a></li>
+<li><a href="/wiki/Systems_theory" title="Systems theory">Systems theory</a></li>
+</ul>
+</div>
+<h2><span class="mw-headline" id="References">References</span><span class="mw-editsection"><span class="mw-editsection-bracket">[</span><a href="/w/index.php?title=Black_box&amp;action=edit&amp;section=9" title="Edit section: References">edit</a><span class="mw-editsection-bracket">]</span></span></h2>
+<div class="reflist" style="list-style-type: decimal;">
+<ol class="references">
+<li id="cite_note-1"><span class="mw-cite-backlink"><b><a href="#cite_ref-1">^</a></b></span> <span class="reference-text">Cauer, Wilhelm; <i>Theorie der linearen Wechselstromschaltungen</i>, <b>Vol.I</b>, Akademische Verlags-Gesellschaft Becker und Erler, Leipzig, 1941.</span></li>
+<li id="cite_note-2"><span class="mw-cite-backlink"><b><a href="#cite_ref-2">^</a></b></span> <span class="reference-text">Cauer, Emil; Mathis, Wolfgang; and Pauli, Rainer; "Life and Work of Wilhelm Cauer (1900&#160;– 1945)", <i>Proceedings of the Fourteenth International Symposium of Mathematical Theory of Networks and Systems (MTNS2000)</i>, p4, Perpignan, June, 2000. <a rel="nofollow" class="external text" href="http://www.cs.princeton.edu/courses/archive/fall03/cs323/links/cauer.pdf">Retrieved online</a> 19 September 2008.</span></li>
+<li id="cite_note-3"><span class="mw-cite-backlink"><b><a href="#cite_ref-3">^</a></b></span> <span class="reference-text">Belevitch, Vitold; "Summary of the history of circuit theory", <i>Proceedings of the IRE</i>, <b>vol 50</b>, Iss 5, pp. 848-855, May 1962.</span></li>
+<li id="cite_note-ash56-4"><span class="mw-cite-backlink">^ <a href="#cite_ref-ash56_4-0"><sup><i><b>a</b></i></sup></a> <a href="#cite_ref-ash56_4-1"><sup><i><b>b</b></i></sup></a> <a href="#cite_ref-ash56_4-2"><sup><i><b>c</b></i></sup></a></span> <span class="reference-text">Ashby, W. Ross; <i>An introduction to cybernetics</i>, London: Chapman &amp; Hall, 1956, chapter 6: <i>The black box</i>, pp. 86–117.</span></li>
+<li id="cite_note-5"><span class="mw-cite-backlink"><b><a href="#cite_ref-5">^</a></b></span> <span class="reference-text">Wiener, Norbert; <i>Cybernetics: or the Control and Communication in the Animal and the Machine</i>, MIT Press, 1961, <a href="/wiki/Special:BookSources/026273009X" class="internal mw-magiclink-isbn">ISBN 0-262-73009-X</a>, page xi</span></li>
+<li id="cite_note-Bunge63-6"><span class="mw-cite-backlink"><b><a href="#cite_ref-Bunge63_6-0">^</a></b></span> <span class="reference-text">Bunge, Mario; "A general black-box theory", Philosophy of Science, Vol. 30, No. 4, 1963, pp. 346-358. <a rel="nofollow" class="external text" href="http://www.jstor.org/pss/186066">jstor/186066</a></span></li>
+<li id="cite_note-gla09-7"><span class="mw-cite-backlink"><b><a href="#cite_ref-gla09_7-0">^</a></b></span> <span class="reference-text">Glanville, Ranulph; "Black Boxes", Cybernetics and Human Knowing, 2009, pp. 153-167.</span></li>
+<li id="cite_note-BS7925-8"><span class="mw-cite-backlink"><b><a href="#cite_ref-BS7925_8-0">^</a></b></span> <span class="reference-text">See for ex. the British standard BS 7925-2 (Software component testing), or its 2001 work draft,<br />
+BCS SIGIST (British Computer Society Specialist Interest Group in Software Testing), "Standard for Software Component Testing", Working Draft 3.4, 27 April 2001 <a rel="nofollow" class="external text" href="http://www.testingstandards.co.uk/bs_7925-2.htm">webpage</a>.</span></li>
+<li id="cite_note-9"><span class="mw-cite-backlink"><b><a href="#cite_ref-9">^</a></b></span> <span class="reference-text">Beizer, Boris; <i>Black-Box Testing: Techniques for Functional Testing of Software and Systems</i>, 1995, <a href="/wiki/Special:BookSources/0471120944" class="internal mw-magiclink-isbn">ISBN 0-471-12094-4</a></span></li>
+<li id="cite_note-10"><span class="mw-cite-backlink"><b><a href="#cite_ref-10">^</a></b></span> <span class="reference-text">"Mind as a Black Box: The Behaviorist Approach", pp. 85-88, in Friedenberg, Jay; and Silverman, Gordon; <i>Cognitive Science: An Introduction to the Study of Mind</i>, Sage Publications, 2006.</span></li>
+<li id="cite_note-11"><span class="mw-cite-backlink"><b><a href="#cite_ref-11">^</a></b></span> <span class="reference-text"><a rel="nofollow" class="external free" href="http://www.g3ngd.talktalk.net/1950.html">http://www.g3ngd.talktalk.net/1950.html</a></span></li>
+</ol>
+</div>
+<table class="navbox" style="border-spacing:0">
+<tr>
+<td style="padding:2px">
+<table class="nowraplinks hlist navbox-inner" style="border-spacing:0;background:transparent;color:inherit">
+<tr>
+<th scope="row" class="navbox-group"><a href="/wiki/Help:Authority_control" title="Help:Authority control">Authority control</a></th>
+<td class="navbox-list navbox-odd" style="text-align:left;border-left-width:2px;border-left-style:solid;width:100%;padding:0px">
+<div style="padding:0em 0.25em">
+<ul>
+<li><a href="/wiki/Integrated_Authority_File" title="Integrated Authority File">GND</a>: <span class="uid"><a rel="nofollow" class="external text" href="http://d-nb.info/gnd/4539866-5">4539866-5</a></span></li>
+</ul>
+</div>
+</td>
+</tr>
+</table>
+</td>
+</tr>
+</table>
+
+
+<!-- 
+NewPP limit report
+Parsed by mw1219
+Cached time: 20151025042020
+Cache expiry: 2592000
+Dynamic content: false
+CPU time usage: 0.127 seconds
+Real time usage: 0.173 seconds
+Preprocessor visited node count: 684/1000000
+Preprocessor generated node count: 0/1500000
+Post‐expand include size: 3535/2097152 bytes
+Template argument size: 759/2097152 bytes
+Highest expansion depth: 12/40
+Expensive parser function count: 1/500
+Lua time usage: 0.025/10.000 seconds
+Lua memory usage: 885 KB/50 MB
+Number of Wikibase entities loaded: 1-->
+
+<!-- 
+Transclusion expansion time report (%,ms,calls,template)
+100.00%  123.644      1 - -total
+ 26.43%   32.680      1 - Template:Authority_control
+ 25.67%   31.743      1 - Template:About
+ 19.87%   24.565      1 - Template:Hatnote
+ 14.97%   18.514      1 - Template:Use_dmy_dates
+ 13.74%   16.991      1 - Template:Reflist
+ 10.72%   13.251      1 - Template:DMCA
+  9.13%   11.294      1 - Template:Dated_maintenance_category
+  6.02%    7.440      1 - Template:FULLROOTPAGENAME
+  4.34%    5.364      1 - Template:Div_col
+-->
+
+<!-- Saved in parser cache with key enwiki:pcache:idhash:18950050-0!*!0!!en!4!* and timestamp 20151025042019 and revision id 680689283
+ -->
+<noscript><img src="//en.wikipedia.org/wiki/Special:CentralAutoLogin/start?type=1x1" alt="" title="" width="1" height="1" style="border: none; position: absolute;" /></noscript></div>					<div class="printfooter">
+						Retrieved from "<a dir="ltr" href="https://en.wikipedia.org/w/index.php?title=Black_box&amp;oldid=680689283">https://en.wikipedia.org/w/index.php?title=Black_box&amp;oldid=680689283</a>"					</div>
+				<div id='catlinks' class='catlinks'><div id="mw-normal-catlinks" class="mw-normal-catlinks"><a href="/wiki/Help:Category" title="Help:Category">Categories</a>: <ul><li><a href="/wiki/Category:Cybernetics" title="Category:Cybernetics">Cybernetics</a></li><li><a href="/wiki/Category:Systems_theory" title="Category:Systems theory">Systems theory</a></li></ul></div><div id="mw-hidden-catlinks" class="mw-hidden-catlinks mw-hidden-cats-hidden">Hidden categories: <ul><li><a href="/wiki/Category:Use_dmy_dates_from_November_2013" title="Category:Use dmy dates from November 2013">Use dmy dates from November 2013</a></li><li><a href="/wiki/Category:Wikipedia_articles_with_GND_identifiers" title="Category:Wikipedia articles with GND identifiers">Wikipedia articles with GND identifiers</a></li></ul></div></div>				<div class="visualClear"></div>
+							</div>
+		</div>
+		<div id="mw-navigation">
+			<h2>Navigation menu</h2>
+
+			<div id="mw-head">
+									<div id="p-personal" role="navigation" class="" aria-labelledby="p-personal-label">
+						<h3 id="p-personal-label">Personal tools</h3>
+						<ul>
+							<li id="pt-createaccount"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Black+box&amp;type=signup" title="You are encouraged to create an account and log in; however, it is not mandatory">Create account</a></li><li id="pt-login"><a href="/w/index.php?title=Special:UserLogin&amp;returnto=Black+box" title="You're encouraged to log in; however, it's not mandatory. [o]" accesskey="o">Log in</a></li>						</ul>
+					</div>
+									<div id="left-navigation">
+										<div id="p-namespaces" role="navigation" class="vectorTabs" aria-labelledby="p-namespaces-label">
+						<h3 id="p-namespaces-label">Namespaces</h3>
+						<ul>
+															<li  id="ca-nstab-main" class="selected"><span><a href="/wiki/Black_box"  title="View the content page [c]" accesskey="c">Article</a></span></li>
+															<li  id="ca-talk"><span><a href="/wiki/Talk:Black_box"  title="Discussion about the content page [t]" accesskey="t" rel="discussion">Talk</a></span></li>
+													</ul>
+					</div>
+										<div id="p-variants" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-variants-label">
+												<h3 id="p-variants-label">
+							<span>Variants</span><a href="#"></a>
+						</h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+									</div>
+				<div id="right-navigation">
+										<div id="p-views" role="navigation" class="vectorTabs" aria-labelledby="p-views-label">
+						<h3 id="p-views-label">Views</h3>
+						<ul>
+															<li id="ca-view" class="selected"><span><a href="/wiki/Black_box" >Read</a></span></li>
+															<li id="ca-edit"><span><a href="/w/index.php?title=Black_box&amp;action=edit"  title="Edit this page [e]" accesskey="e">Edit</a></span></li>
+															<li id="ca-history" class="collapsible"><span><a href="/w/index.php?title=Black_box&amp;action=history"  title="Past revisions of this page [h]" accesskey="h">View history</a></span></li>
+													</ul>
+					</div>
+										<div id="p-cactions" role="navigation" class="vectorMenu emptyPortlet" aria-labelledby="p-cactions-label">
+						<h3 id="p-cactions-label"><span>More</span><a href="#"></a></h3>
+
+						<div class="menu">
+							<ul>
+															</ul>
+						</div>
+					</div>
+										<div id="p-search" role="search">
+						<h3>
+							<label for="searchInput">Search</label>
+						</h3>
+
+						<form action="/w/index.php" id="searchform">
+							<div id="simpleSearch">
+							<input type="search" name="search" placeholder="Search" title="Search Wikipedia [f]" accesskey="f" id="searchInput" /><input type="hidden" value="Special:Search" name="title" /><input type="submit" name="fulltext" value="Search" title="Search Wikipedia for this text" id="mw-searchButton" class="searchButton mw-fallbackSearchButton" /><input type="submit" name="go" value="Go" title="Go to a page with this exact name if it exists" id="searchButton" class="searchButton" />							</div>
+						</form>
+					</div>
+									</div>
+			</div>
+			<div id="mw-panel">
+				<div id="p-logo" role="banner"><a class="mw-wiki-logo" href="/wiki/Main_Page"  title="Visit the main page"></a></div>
+						<div class="portal" role="navigation" id='p-navigation' aria-labelledby='p-navigation-label'>
+			<h3 id='p-navigation-label'>Navigation</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-mainpage-description"><a href="/wiki/Main_Page" title="Visit the main page [z]" accesskey="z">Main page</a></li><li id="n-contents"><a href="/wiki/Portal:Contents" title="Guides to browsing Wikipedia">Contents</a></li><li id="n-featuredcontent"><a href="/wiki/Portal:Featured_content" title="Featured content – the best of Wikipedia">Featured content</a></li><li id="n-currentevents"><a href="/wiki/Portal:Current_events" title="Find background information on current events">Current events</a></li><li id="n-randompage"><a href="/wiki/Special:Random" title="Load a random article [x]" accesskey="x">Random article</a></li><li id="n-sitesupport"><a href="https://donate.wikimedia.org/wiki/Special:FundraiserRedirector?utm_source=donate&amp;utm_medium=sidebar&amp;utm_campaign=C13_en.wikipedia.org&amp;uselang=en" title="Support us">Donate to Wikipedia</a></li><li id="n-shoplink"><a href="//shop.wikimedia.org" title="Visit the Wikipedia store">Wikipedia store</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-interaction' aria-labelledby='p-interaction-label'>
+			<h3 id='p-interaction-label'>Interaction</h3>
+
+			<div class="body">
+									<ul>
+						<li id="n-help"><a href="/wiki/Help:Contents" title="Guidance on how to use and edit Wikipedia">Help</a></li><li id="n-aboutsite"><a href="/wiki/Wikipedia:About" title="Find out about Wikipedia">About Wikipedia</a></li><li id="n-portal"><a href="/wiki/Wikipedia:Community_portal" title="About the project, what you can do, where to find things">Community portal</a></li><li id="n-recentchanges"><a href="/wiki/Special:RecentChanges" title="A list of recent changes in the wiki [r]" accesskey="r">Recent changes</a></li><li id="n-contactpage"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us" title="How to contact Wikipedia">Contact page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-tb' aria-labelledby='p-tb-label'>
+			<h3 id='p-tb-label'>Tools</h3>
+
+			<div class="body">
+									<ul>
+						<li id="t-whatlinkshere"><a href="/wiki/Special:WhatLinksHere/Black_box" title="List of all English Wikipedia pages containing links to this page [j]" accesskey="j">What links here</a></li><li id="t-recentchangeslinked"><a href="/wiki/Special:RecentChangesLinked/Black_box" title="Recent changes in pages linked from this page [k]" accesskey="k">Related changes</a></li><li id="t-upload"><a href="/wiki/Wikipedia:File_Upload_Wizard" title="Upload files [u]" accesskey="u">Upload file</a></li><li id="t-specialpages"><a href="/wiki/Special:SpecialPages" title="A list of all special pages [q]" accesskey="q">Special pages</a></li><li id="t-permalink"><a href="/w/index.php?title=Black_box&amp;oldid=680689283" title="Permanent link to this revision of the page">Permanent link</a></li><li id="t-info"><a href="/w/index.php?title=Black_box&amp;action=info" title="More information about this page">Page information</a></li><li id="t-wikibase"><a href="//www.wikidata.org/wiki/Q29256" title="Link to connected data repository item [g]" accesskey="g">Wikidata item</a></li><li id="t-cite"><a href="/w/index.php?title=Special:CiteThisPage&amp;page=Black_box&amp;id=680689283" title="Information on how to cite this page">Cite this page</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-coll-print_export' aria-labelledby='p-coll-print_export-label'>
+			<h3 id='p-coll-print_export-label'>Print/export</h3>
+
+			<div class="body">
+									<ul>
+						<li id="coll-create_a_book"><a href="/w/index.php?title=Special:Book&amp;bookcmd=book_creator&amp;referer=Black+box">Create a book</a></li><li id="coll-download-as-rdf2latex"><a href="/w/index.php?title=Special:Book&amp;bookcmd=render_article&amp;arttitle=Black+box&amp;returnto=Black+box&amp;oldid=680689283&amp;writer=rdf2latex">Download as PDF</a></li><li id="t-print"><a href="/w/index.php?title=Black_box&amp;printable=yes" title="Printable version of this page [p]" accesskey="p">Printable version</a></li>					</ul>
+							</div>
+		</div>
+			<div class="portal" role="navigation" id='p-lang' aria-labelledby='p-lang-label'>
+			<h3 id='p-lang-label'>Languages</h3>
+
+			<div class="body">
+									<ul>
+						<li class="interlanguage-link interwiki-ar"><a href="//ar.wikipedia.org/wiki/%D8%B5%D9%86%D8%AF%D9%88%D9%82_%D8%A3%D8%B3%D9%88%D8%AF_(%D8%B3%D8%A8%D8%B1%D8%A7%D9%86%D9%8A%D8%A9)" title="صندوق أسود (سبرانية) – Arabic" lang="ar" hreflang="ar">العربية</a></li><li class="interlanguage-link interwiki-az"><a href="//az.wikipedia.org/wiki/Qara_qutu_(kibernetika)" title="Qara qutu (kibernetika) – Azerbaijani" lang="az" hreflang="az">Azərbaycanca</a></li><li class="interlanguage-link interwiki-be"><a href="//be.wikipedia.org/wiki/%D0%A7%D0%BE%D1%80%D0%BD%D0%B0%D1%8F_%D1%81%D0%BA%D1%80%D1%8B%D0%BD%D1%8F,_%D0%BA%D1%96%D0%B1%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D1%8B%D0%BA%D0%B0" title="Чорная скрыня, кібернетыка – Belarusian" lang="be" hreflang="be">Беларуская</a></li><li class="interlanguage-link interwiki-bg"><a href="//bg.wikipedia.org/wiki/%D0%A7%D0%B5%D1%80%D0%BD%D0%B0_%D0%BA%D1%83%D1%82%D0%B8%D1%8F" title="Черна кутия – Bulgarian" lang="bg" hreflang="bg">Български</a></li><li class="interlanguage-link interwiki-ca"><a href="//ca.wikipedia.org/wiki/Caixa_negra_(sistemes)" title="Caixa negra (sistemes) – Catalan" lang="ca" hreflang="ca">Català</a></li><li class="interlanguage-link interwiki-cs"><a href="//cs.wikipedia.org/wiki/%C4%8Cern%C3%A1_sk%C5%99%C3%AD%C5%88ka_(kybernetika)" title="Černá skříňka (kybernetika) – Czech" lang="cs" hreflang="cs">Čeština</a></li><li class="interlanguage-link interwiki-de"><a href="//de.wikipedia.org/wiki/Black_Box_(Systemtheorie)" title="Black Box (Systemtheorie) – German" lang="de" hreflang="de">Deutsch</a></li><li class="interlanguage-link interwiki-et"><a href="//et.wikipedia.org/wiki/Must_kast" title="Must kast – Estonian" lang="et" hreflang="et">Eesti</a></li><li class="interlanguage-link interwiki-es"><a href="//es.wikipedia.org/wiki/Caja_negra_(sistemas)" title="Caja negra (sistemas) – Spanish" lang="es" hreflang="es">Español</a></li><li class="interlanguage-link interwiki-eo"><a href="//eo.wikipedia.org/wiki/Nigra_skatolo_(Sistemiko)" title="Nigra skatolo (Sistemiko) – Esperanto" lang="eo" hreflang="eo">Esperanto</a></li><li class="interlanguage-link interwiki-eu"><a href="//eu.wikipedia.org/wiki/Kutxa_beltz_(sistema)" title="Kutxa beltz (sistema) – Basque" lang="eu" hreflang="eu">Euskara</a></li><li class="interlanguage-link interwiki-fa"><a href="//fa.wikipedia.org/wiki/%D8%AC%D8%B9%D8%A8%D9%87_%D8%B3%DB%8C%D8%A7%D9%87_(%D8%B3%D8%A7%D9%85%D8%A7%D9%86%D9%87)" title="جعبه سیاه (سامانه) – Persian" lang="fa" hreflang="fa">فارسی</a></li><li class="interlanguage-link interwiki-fr"><a href="//fr.wikipedia.org/wiki/Bo%C3%AEte_noire_(syst%C3%A8me)" title="Boîte noire (système) – French" lang="fr" hreflang="fr">Français</a></li><li class="interlanguage-link interwiki-ga"><a href="//ga.wikipedia.org/wiki/Bosca_dubh" title="Bosca dubh – Irish" lang="ga" hreflang="ga">Gaeilge</a></li><li class="interlanguage-link interwiki-it"><a href="//it.wikipedia.org/wiki/Modello_black_box" title="Modello black box – Italian" lang="it" hreflang="it">Italiano</a></li><li class="interlanguage-link interwiki-he"><a href="//he.wikipedia.org/wiki/%D7%A7%D7%95%D7%A4%D7%A1%D7%94_%D7%A9%D7%97%D7%95%D7%A8%D7%94_(%D7%94%D7%A0%D7%93%D7%A1%D7%94)" title="קופסה שחורה (הנדסה) – Hebrew" lang="he" hreflang="he">עברית</a></li><li class="interlanguage-link interwiki-lv"><a href="//lv.wikipedia.org/wiki/Meln%C4%81_kaste" title="Melnā kaste – Latvian" lang="lv" hreflang="lv">Latviešu</a></li><li class="interlanguage-link interwiki-hu"><a href="//hu.wikipedia.org/wiki/Fekete_doboz_(rendszerelm%C3%A9let)" title="Fekete doboz (rendszerelmélet) – Hungarian" lang="hu" hreflang="hu">Magyar</a></li><li class="interlanguage-link interwiki-my"><a href="//my.wikipedia.org/wiki/%E1%80%98%E1%80%9C%E1%80%80%E1%80%BA%E1%80%98%E1%80%B1%E1%80%AC%E1%80%80%E1%80%BA%E1%80%85%E1%80%BA" title="ဘလက်ဘောက်စ် – Burmese" lang="my" hreflang="my">မြန်မာဘာသာ</a></li><li class="interlanguage-link interwiki-nl"><a href="//nl.wikipedia.org/wiki/Zwarte_doos" title="Zwarte doos – Dutch" lang="nl" hreflang="nl">Nederlands</a></li><li class="interlanguage-link interwiki-ja"><a href="//ja.wikipedia.org/wiki/%E3%83%96%E3%83%A9%E3%83%83%E3%82%AF%E3%83%9C%E3%83%83%E3%82%AF%E3%82%B9" title="ブラックボックス – Japanese" lang="ja" hreflang="ja">日本語</a></li><li class="interlanguage-link interwiki-pt"><a href="//pt.wikipedia.org/wiki/Caixa_preta_(teoria_dos_sistemas)" title="Caixa preta (teoria dos sistemas) – Portuguese" lang="pt" hreflang="pt">Português</a></li><li class="interlanguage-link interwiki-rue"><a href="//rue.wikipedia.org/wiki/%D0%A7%D0%BE%D1%80%D0%BD%D0%B0_%D1%81%D0%BA%D1%80%D0%B8%D0%BD%D1%8C%D0%BA%D0%B0_(%D0%BA%D1%96%D0%B1%D0%B5%D1%80%D0%BD%D0%B5%D1%82%D1%96%D0%BA%D0%B0)" title="Чорна скринька (кібернетіка) – Rusyn" lang="rue" hreflang="rue">Русиньскый</a></li><li class="interlanguage-link interwiki-ru"><a href="//ru.wikipedia.org/wiki/%D0%A7%D1%91%D1%80%D0%BD%D1%8B%D0%B9_%D1%8F%D1%89%D0%B8%D0%BA" title="Чёрный ящик – Russian" lang="ru" hreflang="ru">Русский</a></li><li class="interlanguage-link interwiki-simple"><a href="//simple.wikipedia.org/wiki/Black_box" title="Black box – Simple English" lang="simple" hreflang="simple">Simple English</a></li><li class="interlanguage-link interwiki-sk"><a href="//sk.wikipedia.org/wiki/%C4%8Cierna_skrinka_(v%C5%A1eobecn%C3%BD_pojem)" title="Čierna skrinka (všeobecný pojem) – Slovak" lang="sk" hreflang="sk">Slovenčina</a></li><li class="interlanguage-link interwiki-sl"><a href="//sl.wikipedia.org/wiki/%C4%8Crna_%C5%A1katla_(tehnika)" title="Črna škatla (tehnika) – Slovenian" lang="sl" hreflang="sl">Slovenščina</a></li><li class="interlanguage-link interwiki-sr"><a href="//sr.wikipedia.org/wiki/%D0%A6%D1%80%D0%BD%D0%B0_%D0%BA%D1%83%D1%82%D0%B8%D1%98%D0%B0" title="Црна кутија – Serbian" lang="sr" hreflang="sr">Српски / srpski</a></li><li class="interlanguage-link interwiki-fi"><a href="//fi.wikipedia.org/wiki/Musta_laatikko_(systeemiteoria)" title="Musta laatikko (systeemiteoria) – Finnish" lang="fi" hreflang="fi">Suomi</a></li><li class="interlanguage-link interwiki-sv"><a href="//sv.wikipedia.org/wiki/Svart_l%C3%A5da" title="Svart låda – Swedish" lang="sv" hreflang="sv">Svenska</a></li><li class="interlanguage-link interwiki-uk"><a href="//uk.wikipedia.org/wiki/%D0%A7%D0%BE%D1%80%D0%BD%D0%B8%D0%B9_%D1%8F%D1%89%D0%B8%D0%BA" title="Чорний ящик – Ukrainian" lang="uk" hreflang="uk">Українська</a></li><li class="interlanguage-link interwiki-vi"><a href="//vi.wikipedia.org/wiki/H%E1%BB%99p_%C4%91en" title="Hộp đen – Vietnamese" lang="vi" hreflang="vi">Tiếng Việt</a></li><li class="interlanguage-link interwiki-zh"><a href="//zh.wikipedia.org/wiki/%E9%BB%91%E7%AE%B1" title="黑箱 – Chinese" lang="zh" hreflang="zh">中文</a></li><li class="uls-p-lang-dummy"><a href="#"></a></li>					</ul>
+				<div class='after-portlet after-portlet-lang'><span class="wb-langlinks-edit wb-langlinks-link"><a href="//www.wikidata.org/wiki/Q29256#sitelinks-wikipedia" title="Edit interlanguage links" class="wbc-editpage">Edit links</a></span></div>			</div>
+		</div>
+				</div>
+		</div>
+		<div id="footer" role="contentinfo">
+							<ul id="footer-info">
+											<li id="footer-info-lastmod"> This page was last modified on 12 September 2015, at 15:03.</li>
+											<li id="footer-info-copyright">Text is available under the <a rel="license" href="//en.wikipedia.org/wiki/Wikipedia:Text_of_Creative_Commons_Attribution-ShareAlike_3.0_Unported_License">Creative Commons Attribution-ShareAlike License</a><a rel="license" href="//creativecommons.org/licenses/by-sa/3.0/" style="display:none;"></a>;
+additional terms may apply.  By using this site, you agree to the <a href="//wikimediafoundation.org/wiki/Terms_of_Use">Terms of Use</a> and <a href="//wikimediafoundation.org/wiki/Privacy_policy">Privacy Policy</a>. Wikipedia® is a registered trademark of the <a href="//www.wikimediafoundation.org/">Wikimedia Foundation, Inc.</a>, a non-profit organization.</li>
+									</ul>
+							<ul id="footer-places">
+											<li id="footer-places-privacy"><a href="//wikimediafoundation.org/wiki/Privacy_policy" title="wikimedia:Privacy policy">Privacy policy</a></li>
+											<li id="footer-places-about"><a href="/wiki/Wikipedia:About" title="Wikipedia:About">About Wikipedia</a></li>
+											<li id="footer-places-disclaimer"><a href="/wiki/Wikipedia:General_disclaimer" title="Wikipedia:General disclaimer">Disclaimers</a></li>
+											<li id="footer-places-contact"><a href="//en.wikipedia.org/wiki/Wikipedia:Contact_us">Contact Wikipedia</a></li>
+											<li id="footer-places-developers"><a href="https://www.mediawiki.org/wiki/Special:MyLanguage/How_to_contribute">Developers</a></li>
+											<li id="footer-places-mobileview"><a href="//en.m.wikipedia.org/w/index.php?title=Black_box&amp;mobileaction=toggle_view_mobile" class="noprint stopMobileRedirectToggle">Mobile view</a></li>
+									</ul>
+										<ul id="footer-icons" class="noprint">
+											<li id="footer-copyrightico">
+							<a href="//wikimediafoundation.org/"><img src="/static/images/wikimedia-button.png" srcset="/static/images/wikimedia-button-1.5x.png 1.5x, /static/images/wikimedia-button-2x.png 2x" width="88" height="31" alt="Wikimedia Foundation"/></a>						</li>
+											<li id="footer-poweredbyico">
+							<a href="//www.mediawiki.org/"><img src="/static/1.27.0-wmf.3/resources/assets/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki" srcset="/static/1.27.0-wmf.3/resources/assets/poweredby_mediawiki_132x47.png 1.5x, /static/1.27.0-wmf.3/resources/assets/poweredby_mediawiki_176x62.png 2x" width="88" height="31" /></a>						</li>
+									</ul>
+						<div style="clear:both"></div>
+		</div>
+		<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.state({"ext.globalCssJs.site":"ready","ext.globalCssJs.user":"ready","user":"ready","user.groups":"ready"});
+} );</script>
+<link rel="stylesheet" href="/w/load.php?debug=false&amp;lang=en&amp;modules=ext.cite.styles%7Cext.gadget.DRN-wizard%2CReferenceTooltips%2Ccharinsert%2Cfeatured-articles-links%2CrefToolbar%2Cswitcher%2Cteahouse%7Cext.wikimediaBadges&amp;only=styles&amp;skin=vector" />
+<script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.loader.load(["ext.cite.a11y","mediawiki.toc","mediawiki.action.view.postEdit","site","mediawiki.user","mediawiki.hidpi","mediawiki.page.ready","mediawiki.searchSuggest","ext.eventLogging.subscriber","ext.wikimediaEvents","ext.wikimediaEvents.geoFeatures","ext.navigationTiming","ext.gadget.teahouse","ext.gadget.ReferenceTooltips","ext.gadget.DRN-wizard","ext.gadget.charinsert","ext.gadget.refToolbar","ext.gadget.switcher","ext.gadget.featured-articles-links","mmv.bootstrap.autostart","ext.visualEditor.targetLoader","schema.UniversalLanguageSelector","ext.uls.eventlogger","ext.uls.interlanguage"]);
+} );</script><script>window.RLQ = window.RLQ || []; window.RLQ.push( function () {
+mw.config.set({"wgBackendResponseTime":274,"wgHostname":"mw1219"}); /* @nomin */
+} );</script>
+	</body>
+</html>

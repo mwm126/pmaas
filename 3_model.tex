@@ -13,17 +13,12 @@ Therefore, although numerous modeling choices exist in the literature for such a
 
 %For low rates of throughput, the latency is nearly constant and increases slowly with increasing throughput.  As throughput approaches the maximum capacity of the server, the latency increases much more rapidly.  For our study, we study the low-throughput region, which is approximately linear for a variety of VM instances, applications, and throughputs.  Therefore a multiple linear regression is justified.
 
-
-\begin{comment}
-~\bu{suggestions for creating a first draft:
 \begin{itemize}
 \item Section 3.1: Background on Multi-Linear Regression. Describe basics from a standard source and cite it. Summarize the main assumptions underlying regression. Cite papers that have used linear regression based modeling for data center/cloud workloads. 
 \item Section 3.2: Our Model. Describe what we wish to predict. Describe what all our input variables could be. Describe what subset we choose. Make a note about possible positive correlation between num cores and memory (refer to Figure 2). Describe what metric (predicted R-2) we use for measuring the efficacy of our model. 
 \item Section 3.3: Discuss implications of lack of independence between num cores and memory. Discuss what operating regions our model is likely to capture well and which ones it might not. Discuss possible extensions. Point to related work for discussion of alternate modeling approaches that have been explored. Discuss possible problems with using predicted R-2 as a measure of model accuracy and alternative metrics (e.g., in Chris Stewart's paper). 
-\end{itemize}}
-\end{comment}
+\end{itemize}
 
-%\mm{
 %\subsection{Background on Multiple Linear Regression}
 \noindent{\bf Multiple Linear Regression:} Given a data set \\ $\{y_i,x_{i1},\ldots,x_{ip}\}^n_{i=1}$, a linear regression on multiple independent variables $x_{p}$ and dependent variable $y$ is a set of parameters $\beta_i$ that model a linear relationship between $y$ and $x_{i}$~\cite{CMUStatsBook}.
 
@@ -53,12 +48,10 @@ We define a training set $S = \{VM_i\}^n_{i=1}$ as a set of virtual machines, ea
     \label{figure:combined}
 \end{figure}
 
-
-
-
 \noindent{\bf Measure of Model Efficacy:} We use the predicted coefficient of multiple determination ($R^2_{predicted}$) as our measure of model accuracy which is defined as: 
-\newdef{definition}{Definition}
-\begin{definition}
+\theoremstyle{definition}
+\newtheorem{mydef}{Definition}
+\begin{mydef}
 For a test instance $VM_{test}$ with $x_{test,i}$,
 \begin{displaymath}
 R_{predicted}^2=1-\frac{\sum_{i=1}^{n} (y_{test,i} - \hat{y}(x_{test,i}))^{2}}{\sum_{i=1}^{n} (y_{test,i} - \bar{y_{test}})^{2}}
@@ -68,7 +61,7 @@ where
 \hat{y}(x_{test,i})=\sum_{i=1}^{n} \beta_i x_{test,i}
 \end{displaymath}
 and $\bar{y}_{test}$ is the mean of $y_{test,i}$.
-\end{definition}
+\end{mydef}
 
 %\subsubsection{Input and Predicted Variables}
 

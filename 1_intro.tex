@@ -3,7 +3,6 @@
 
 %Cloud vendors offer a lot of different virtual machine instance types. Cloud tenants needs to determine what benefit new virtual machine types will bring to their applications.
 
-
 Many enterprises are migrating their information technology (IT) needs to public cloud computing platforms, a trend that is projected to continue unabated in the foreseeable future~\cite{forbes}. Among the most important reasons behind these ``tenants'' choosing to procure their IT needs from a public cloud is the promise of lower costs. To effectively realize these cost-related benefits, however, it is crucial that these tenants carry out careful dynamic procurement of IT resources (sometimes labeled ``autoscaling'') to match their evolving needs. Numerous studies show that approaches based on over-provisioning or other ``crude'' estimates of resource needs may negate the cost benefit potential that migrating to a public cloud may offer~\cite{takmig,Li2011,Teregowda10a,Teregowda10b}. Therefore, tenant-side resource procurement has emerged as an area of active research with different aspects of it receiving attention both in  papers~\cite{WuBPKM13,Zafer2012OBS,MenacheSJ14,Zhang15,Farley:2012:MYM:2391229.2391249,DBLP:conf/hotcloud/LeeK11} and industrial products~\cite{cloudphysics,clusterk}. 
 
 Procuring resources cost-effectively from a public cloud %provider 
@@ -47,7 +46,6 @@ We wish to explore if a tenant might actually be able to benefit from this diver
 %\vspace{-10pt}
 \end{figure*}
 
-
 \noindent {\bf Our Approach and Contributions:} In this paper, we take a small first step towards exploring the above idea by evaluating the following hypothesis: {\em using a more diverse set of VMs for calibrating/training a performance model helps improve its accuracy}. Specifically, we devise a multiple linear regression modeling framework for predicting the performance of interactive data  serveing applications. We calibrate this model for three different types of real-world applications: (i) Redis~\cite{redis}, an open-source in-memory NoSQL key-value store, (ii) Apache Cassandra~\cite{cassandra}, a Table/key-value hybrid NoSQL database, and (iii) MySQL, a popular open-source ACID database~\cite{mysql}. We use ``training sets'' of varying sizes (i.e., numbers of VM types) for our calibration and investigate the impact of the training set size on model efficacy. Our results are promising. E.g., for Redis, we find that the $R^2_{predicted}$ measure of model efficacy improves from 0.4-0.5 with 2 VM types for training and 0.7 with 3 VM types to 0.8 for 4 VM types. 
 %\begin{itemize}
 %\item ...
@@ -72,3 +70,4 @@ present concluding remarks in Section~\ref{sec:conclus}.
 %explain why the state-of-the-art may not be adequate, particularly as clouds move towards higher levels of utilization and dynamism
 
 %explain our key ideas and contributions
+

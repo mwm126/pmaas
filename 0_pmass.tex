@@ -1,14 +1,15 @@
-\documentclass{acm_proc_article-sp}
+%\input{00_presentation_1.tex}
+\documentclass[a4paper,11pt]{article}
 \usepackage{color}
 \usepackage{comment}
 \usepackage{url}
 \usepackage{doublefig}
 \usepackage{float}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsthm}
 \usepackage[caption = false]{subfig}
 %\usepackage[demo]{graphicx}
-
-\newcommand{\bu}[1]{{\color{blue}#1}}
-\newcommand{\mm}[1]{{\color{red}#1}}
 
 %\pagenumbering{arabic}
 
@@ -16,63 +17,25 @@
 
 \title{Towards Performance Modeling as a Service by Exploiting Resource Diversity in the Public Cloud}
 
-\numberofauthors{2}
 \author{
-% You can go ahead and credit any number of authors here,
-% e.g. one 'row of three' or two rows (consisting of one row of three
-% and a second row of one, two or three).
-%
-% The command \alignauthor (no curly braces needed) should
-% precede each author name, affiliation/snail-mail address and
-% e-mail address. Additionally, tag each line of
-% affiliation/address with \affaddr, and tag the
-% e-mail address with \email.
-%
-% 1st. author
-\alignauthor
 Mark Meredith\\
-       \affaddr{Dept. of Comp. Sci. and Eng.}\\
-       \affaddr{The Penn State University}\\
-       \affaddr{University Park, PA 16802}\\
-       \email{mwm126@cse.psu.edu}
-\alignauthor
-Bhuvan Urgaonkar\\
-       \affaddr{Dept. of Comp. Sci. and Eng.}\\
-       \affaddr{The Penn State University}\\
-       \affaddr{University Park, PA, 16802}\\
-       \email{bhuvan@cse.psu.edu}
+       Dept. of Comp. Sci. and Eng.\\
+       The Penn State University\\
+       University Park, PA 16802\\
+       mwm126@cse.psu.edu
 }
-% There's nothing stopping you putting the seventh, eighth, etc.
-% author on the opening page (as the 'third row') but we ask,
-% for aesthetic reasons that you place these 'additional authors'
-% in the \additional authors block, viz.
-%\additionalauthors{Additional authors: John Smith (The Th{\o}rv{\"a}ld Group,
-%email: {\texttt{jsmith@affiliation.org}}) and Julius P.~Kumquat
-%(The Kumquat Consortium, email: {\texttt{jpkumquat@consortium.net}}).}
-%\date{30 July 1999}
-% Just remember to make sure that the TOTAL number of authors
-% is the number that will appear on the first page PLUS the
-% number that will appear in the \additionalauthors section.
-
-    \maketitle
-
+\maketitle
 %\setcounter{1}
-%\pagenumbering{arabic}
-
+\pagenumbering{arabic}
 
 \begin{abstract}
 %One of the main benefits of virtualization through cloud computing is the ready availability of large rapid virtual machines for rapid application deployment. As computing hardware advances, cloud computing vendors offer new virtual machines with new performance characteristics, adding to the large set of virtual machine types to choose from. Many virtual machine types are available, with varying performance and pricing options. In this work we present a statistical model for estimating the performance of new virtual machine types based on knowledge of existing types. This model is based on data collected by running the Yahoo! Cloud Services Benchmark (YCSB). The databases surveyed are the key-value database Redis, deployed on Amazon Elasticache, and the NoSQL databases Apache Cassandra, deployed on Amazon Elastic Compute Cloud. We tested these on a variety of Amazon virtual machines types.
 
 %A key difference between 
-Public cloud computing platforms %and more conventional privately-owned data centers is the immense diversity of resource types offered by the former. For example, 
-such as Amazon EC2, Google Computing Engine, and Microsoft Azure %all 
-offer dozens of virtual machine (VM) types with a wide spectrum of %different 
-resource capacity vs. price trade-offs. Consequently, a cost-conscious tenant procuring its IT needs from a public cloud provider is faced with the prospect of having to calibrate its application performance models for an enormously large set of resource configurations. At first glance this would appear to pose significant challenges both for the  scalability and cost of performance modeling needed for cost-effective resource procurement. We argue that, instead of this diversity being a hindrance, it might be possible for the tenant to actually exploit the diversity of cloud resources to ease performance modeling. To illustrate this, we adapt a popular performance modeling technique based on multiple linear regression. Our model expresses the average response time of a class of interactive server applications as a linear combination of the offered throughput (requests/s), the number of CPU cores and memory in the procured VM, and degree of replication employed by the application. Using three different real-world applications - two NoSQL key-value stores (Redis and Apache Cassandra) and the MySQL database -  we show that training our model using a more diverse set of VMs helps improve its accuracy. %~\bu{** Furthermore, ... Some sample results. **}
-E.g., for Redis, the $R^2_{predicted}$ measure of model efficacy improves from 0.4-0.5 with 2 VM types for training and 0.7 for 3 VM types to 0.8 for 4 VM types. 
-Although we consider a specific modeling approach, our basic observation is likely to benefit other modeling techniques developed in the literature. Our work opens up a number of interesting research challenges, including the possibility of (semi-) automating the process of calibrating performance models using diverse resource types on a public cloud leading to ``performance modeling as a service.''
-\end{abstract}
+Cloud computing platforms such as Amazon EC2, Google Computing Engine, and Microsoft Azure
+offer dozens of virtual machine (VM) types with a wide range of resource capacity vs. price trade-offs, requiring a customer to consider numerous resource configurations when evaluating service needs. This report investigates the possibility of using the diversity of VM types to predict the performance of new VM types using black box modeling. The performance model used is a multiple linear regression of the average server response time, server load (throughput in requests per second), the number of CPU cores, and the memory in the procured VM. For three commonly used database servers - Redis (key-value stores), Apache Cassandra (NoSQL) and MySQL -  the model accuracy increases for larger sets of VMs.  E.g., for Redis, the $R^2_{predicted}$ measure of model efficacy improves from 0.4-0.5 with 2 VM types for training and 0.7 for 3 VM types to 0.8 for 4 VM types.  These results suggest further interesting research challenges, such as the possibility of automating the process of calibrating performance models using diverse resource types on a public cloud leading to ``performance modeling as a service.''
 
-\keywords{Performance modeling, public cloud, regression, empirical evaluation, key-value store, database} % NOT required for Proceedings
+\end{abstract}
 
 \input{1_intro}
 \input{2_overview}
@@ -84,21 +47,5 @@ Although we consider a specific modeling approach, our basic observation is like
 
 %\end{document}  % This is where a 'short' article might terminate
 
-
-%
-% The following two commands are all you need in the
-% initial runs of your .tex file to
-% produce the bibliography for the citations in your paper.
-\bibliographystyle{abbrv}
-\bibliography{7_refs}  % sigproc.bib is the name of the Bibliography in this case
-% You must have a proper ".bib" file
-%  and remember to run:
-% latex bibtex latex latex
-% to resolve all references
-%
-% ACM needs 'a single self-contained file'!
-%
-
-\balancecolumns
 % That's all folks!
 \end{document}
