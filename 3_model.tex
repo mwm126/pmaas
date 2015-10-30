@@ -2,22 +2,9 @@
 \label{sec:model}
 \vspace{10pt}
 
-In this section, we describe the general performance modeling ideas we employ in our research. In Section~\ref{sec:eval}, %we describe how 
-we adapt this basic model to our three application case studies whose performance we study on the Amazon EC2 cloud. 
-
-Our interest is in interactive data-serving applications whose %server applications, the 
-performance is typically %can be 
-characterized in terms of their throughput (request/s) and average request response time or latency.  %(duration of each request).  
- It is important to note that our primary interest in this paper is {\em not in identifying the most accurate performance model but rather in exploring if diversity in the VMs used for calibrating our chosen model helps improve its efficacy}. 
-Therefore, although numerous modeling choices exist in the literature for such applications (see Section~\ref{sec:related}), we choose a relatively simple approach based on multiple linear regression because: (i) it serves as a good starting point for evaluating our hypothesis, (ii) it is easy to cast, train, and evaluate, and (ii)it  works well - especially under low/moderate throughputs which we expect to be normal operating regions for well-provisioned, performance-sensitive tenant workloads -  as demonstrated in past work~\cite{Stewart07,Kelly:2005:DPA:1251522.1251530}. 
-
-%For low rates of throughput, the latency is nearly constant and increases slowly with increasing throughput.  As throughput approaches the maximum capacity of the server, the latency increases much more rapidly.  For our study, we study the low-throughput region, which is approximately linear for a variety of VM instances, applications, and throughputs.  Therefore a multiple linear regression is justified.
-
-\begin{itemize}
-\item Section 3.1: Background on Multi-Linear Regression. Describe basics from a standard source and cite it. Summarize the main assumptions underlying regression. Cite papers that have used linear regression based modeling for data center/cloud workloads. 
-\item Section 3.2: Our Model. Describe what we wish to predict. Describe what all our input variables could be. Describe what subset we choose. Make a note about possible positive correlation between num cores and memory (refer to Figure 2). Describe what metric (predicted R-2) we use for measuring the efficacy of our model. 
-\item Section 3.3: Discuss implications of lack of independence between num cores and memory. Discuss what operating regions our model is likely to capture well and which ones it might not. Discuss possible extensions. Point to related work for discussion of alternate modeling approaches that have been explored. Discuss possible problems with using predicted R-2 as a measure of model accuracy and alternative metrics (e.g., in Chris Stewart's paper). 
-\end{itemize}
+This section describes the general performance modeling ideas used. In Section~\ref{sec:eval}, %we describe how 
+this basic model is adapted to three application case studies on the Amazon AWS cloud. The primary interest in this paper is not in identifying the most accurate performance model but rather in exploring if diversity in the VMs used for calibrating the chosen model helps improve its efficacy. 
+Therefore, although numerous modeling choices exist in the literature for such applications, we use a relatively simple multiple linear regression approach because: (i) it serves as a good starting point for evaluating the hypothesis, (ii) it is easy to cast, train, and evaluate, and (ii)it  works well - especially under low/moderate throughputs for the normal operating regions of well-provisioned, performance-sensitive tenant workloads.
 
 %\subsection{Background on Multiple Linear Regression}
 \noindent{\bf Multiple Linear Regression:} Given a data set \\ $\{y_i,x_{i1},\ldots,x_{ip}\}^n_{i=1}$, a linear regression on multiple independent variables $x_{p}$ and dependent variable $y$ is a set of parameters $\beta_i$ that model a linear relationship between $y$ and $x_{i}$~\cite{CMUStatsBook}.

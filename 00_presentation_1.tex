@@ -118,7 +118,7 @@ Pennsylvania State University \\ % Your institution for the title page
 
 \section{Background}
 \begin{frame}
-\frametitle{Lots of VMs from cloud vendors}
+\frametitle{Lots of VMs from cloud vendors...}
 \begin{figure}[htbp]
 \centering
 \includegraphics[width=0.45\textwidth]{cloud_vm_types.eps}
@@ -133,10 +133,10 @@ Pennsylvania State University \\ % Your institution for the title page
 \end{figure}
 \end{frame}
 
-\begin{comment}
+\begin{frame}
 \frametitle{Black box Modeling}
 \includegraphics[width=0.8\textwidth]{blackbox.eps}
-\end{comment}
+\end{frame}
 
 \begin{frame}
 \frametitle{Latency vs Throughput}
@@ -169,7 +169,7 @@ y_i = \beta_1 x_{i1}+\ldots+\beta_{p}x_{ip}+\epsilon_i
 
 Do a multiple linear regression to find the coefficients $\beta_i$.  Then for a test instance $VM_{test}$ with $x_{test,i}$, find:
 \begin{displaymath}{
-y_{test} = \beta_1 x_{test,1}+\ldots+\beta_{p}x_{test,p}
+y_{test} = \beta_1 x_{test,1}+\ldots+\beta_{p}x_{test,p}+\epsilon_i = \hat{y}+\epsilon_i 
 }\end{displaymath}
 
 \end{frame}
@@ -182,7 +182,7 @@ R_{predicted}^2=1-\frac{\sum_{i=1}^{n} (y_{test,i} - \hat{y}(x_{test,i}))^{2}}{\
 \end{displaymath}
 where
 \begin{displaymath}
-\hat{y}(x_{test,i})=\sum_{i=1}^{n} \beta_i x_{test,i}
+\hat{y}(x_{test})=\sum_{i=1}^{n} \beta_i x_{test,i}
 \qquad\text{and}\qquad
 \bar{y}_{test}=\frac{1}{n}\sum_{i=1}^{n} y_{test,i}
 \end{displaymath}
@@ -204,13 +204,16 @@ Most widely used open-source RDBMS
 
 \begin{frame}
 \frametitle{Benchmark specifics}
-\begin{enumerate}
+\begin{itemize}
 \item Yahoo! Cloud Serving Benchmark 
-\item YCSB client on m4.2xlarge EC2 instance with Ubuntu Linux 14.04
-\item testing from same Amazon zone/region
-\item preload database before each test
-\item check client system load to make sure client is not the bottleneck
-\end{enumerate}
+\item ran YCSB client on m4.2xlarge EC2 instance with Ubuntu Linux 14.04
+\begin{itemize}
+\item checked client system load to make sure client is not the bottleneck
+\end{itemize}
+\item tested from same Amazon zone/region
+\item preloaded database before each test with a million records each with 10 fields of size 100 bytes of data
+\item ran benchmark for a million requests
+\end{itemize}
 \end{frame}
 
 \begin{frame}
@@ -379,7 +382,7 @@ read&write&Training Set\\ \hline
 \end{frame}
 
 \begin{frame}
-\frametitle{Redis}
+\frametitle{MySQL}
 \begin{enumerate}
 \item RDBMS database
 \item deployed with Amazon RDS
@@ -391,7 +394,7 @@ read&write&Training Set\\ \hline
   \begin{figure}
     \centering
     \includegraphics[scale = 0.3]{mysql_fit_read_avg_latency.eps}
-    \caption{Read latency/throughput plot for MySQL. Although our multiple linear regression model offers a poorer prediction for MySQL than for our other case studies, we continue to observe an improvement in its efficacy upon increasing the diversity of the training set. }
+    \caption{Read latency/throughput plot for MySQL; multiple linear regression model does not fit as well for MySQL compared to other case studies}
     \label{figure:mysql}
   \end{figure}
 \end{frame}
@@ -401,7 +404,7 @@ read&write&Training Set\\ \hline
 \begin{frame}
 \frametitle{Conclusions}
 \begin{block}{Diversity of VM instance types}
-Opportunity for data modeling
+Opportunity for black box data modeling with multiple linear regression
 \end{block}
 \begin{block}{Tested Latency vs. Throughput for 3 common database applications}
 Redis, Cassandra, MySQL

@@ -8,13 +8,15 @@
 \usepackage{graphicx}
 \usepackage{amsmath}
 \usepackage{amsthm}
+\usepackage{enumitem}
+%\usepackage{refcheck}
 \usepackage[caption = false]{subfig}
 %\usepackage[demo]{graphicx}
 
 %\pagenumbering{arabic}
 
 \begin{document}
-
+%\nocite{*}
 \title{Towards Performance Modeling as a Service by Exploiting Resource Diversity in the Public Cloud}
 
 \author{
@@ -38,14 +40,16 @@ offer dozens of virtual machine (VM) types with a wide range of resource capacit
 \end{abstract}
 
 \input{1_intro}
-\input{2_overview}
+%\input{2_overview}
 \input{3_model}
 \input{4_1_eval}
-\input{5_related}
+%\input{5_related}
 \input{6_future-conclus}
 
-
+%\end{document}  % This is where a 'short' article might terminate                                                                                                                   
+\bibliographystyle{abbrv}
+\bibliography{7_refs}  % sigproc.bib is the name of the Bibliography in this case                                                                                                    
+%\balancecolumns
 %\end{document}  % This is where a 'short' article might terminate
-
 % That's all folks!
 \end{document}
